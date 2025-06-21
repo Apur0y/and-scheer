@@ -1,4 +1,6 @@
+"use client"
 import Input from '@/app/components/Input'
+import Link from 'next/link';
 import React from 'react'
 import { useForm } from 'react-hook-form';
 
@@ -87,7 +89,7 @@ export default function Loginform() {
           </button>
           <div className='flex justify-center gap-2 text-gray-700 flex-col md:flex-row '>
             <p className='text-center'>If you don't have any account please</p>
-            <button className='text-green-600 underline font-semibold'>Create Account</button>
+            <Link href={"/register"} className='text-green-600 underline font-semibold'>Create Account</Link>
           </div>
         </div>
       </div>
