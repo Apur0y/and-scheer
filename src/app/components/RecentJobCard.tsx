@@ -17,10 +17,10 @@ export default function RecentJobCard({ job }: RecentJobCardProps) {
     <div className=' max-w-md border border-gray-200 rounded shadow-md p-3 '>
         <div className='flex'>
             <img src={job.icons ||""} alt="" className='h-8 w-8 rounded-full bg-sky-800'/>
-            <h1 className='text-xl font-semibold'>{job.position}</h1>
+            <h1 className='text-xl font-semibold'>{job.name}</h1>
         </div>
-        <h2 className='text-md font-semibold'>{job.name}</h2>
-        <p>{job.location}</p>
+        <h2 className='text-md  font-semibold'>{job.position}</h2>
+        <p className='text-gray-500'>{job.location}</p>
 
         <div className='flex items-center justify-between'>
             <h1>{job.salary}/month</h1>
