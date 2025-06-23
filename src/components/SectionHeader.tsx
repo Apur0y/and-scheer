@@ -1,5 +1,6 @@
 import ComponentHeader from '@/page-components/ComponentHeader'
 import React from 'react'
+import Button from './Button'
 
 export default function ChooseUs() {
   return (
@@ -12,6 +13,7 @@ export default function ChooseUs() {
         </>}
 
         ></ComponentHeader>
+        <Button className='w-34'></Button>
     </div>
   )
 }

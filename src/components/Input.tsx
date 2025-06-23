@@ -9,7 +9,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 const Input = React.forwardRef<HTMLInputElement, InputProps>(function Input({
     label,
     type = 'text',
-    className = 'p-2 border border-[#8b8b8b]  rounded w-full',
+    className = 'px-4 py-3 border border-[#c2c2c2]  rounded w-full',
     ...props
 
 }, ref) 
@@ -17,7 +17,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(function Input({
     const id = React.useId();
   return (
     <div>
-        {label && <label htmlFor={id} className='text-[#333333]'> {label}</label>}
+        {label && <label htmlFor={id} className='text-[#333333] '> {label}</label>}
         <input
         type={type}
         className={`${className} `}

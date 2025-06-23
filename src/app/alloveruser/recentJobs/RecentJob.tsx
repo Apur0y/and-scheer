@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import RecentJobCard from './RecentJobCard'
+// import RecentJobCard from './RecentJobCard'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -14,6 +14,7 @@ import 'swiper/css/navigation';
 
 // import required modules
 import { FreeMode, Navigation, Pagination } from 'swiper/modules';
+import RecentJobCard from './RecentJobCard';
 
 export default function RecentJob() {
 
