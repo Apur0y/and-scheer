@@ -1,3 +1,4 @@
+import Button from '@/components/Button'
 import Container from '@/components/Container'
 import Image from 'next/image'
 import React from 'react'
@@ -12,7 +13,8 @@ function EmployeeAccount() {
                     </div>
                     <div className='space-y-4'>
                         <h1 className='text-[#333333] text-4xl font-bold leading-[124%]'>Create Your <br/> Employee Account</h1>
-                        <p className='text-[#777777] '>Fllow these simple steps to set up your company profile and find the perfect <br/> candidate for your team</p>
+                        <p className='text-[#777777] text-lg leading-[160%]'>Fllow these simple steps to set up your company profile and find the perfect <br/> candidate for your team</p>
+                        <Button name="Start Now" className='w-[216px] h-[56px] rounded-lg'/>
                     </div>
                 </div>
             </Container>

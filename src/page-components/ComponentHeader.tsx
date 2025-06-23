@@ -7,10 +7,10 @@ export default function ComponentHeader({
 
 }) {
   return (
-    <div className='flex justify-center flex-col items-center gap-3'>
+    <div className='flex justify-center flex-col items-center gap-4'>
   
       <h1 className={className}>{title}</h1>
-      <p className="text-gray-600 mb-4 text-center">{description}</p>
+      <p className="text-[#777777] mb-4 text-center">{description}</p>
       {/* {children && <div className="mt-4">{children}</div>} */}
     </div>
   )
