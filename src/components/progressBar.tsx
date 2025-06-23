@@ -44,7 +44,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
         </div>
 
         {/* Circles container - using grid for perfect alignment */}
-        <div className="relative grid grid-cols-7 md:grid-cols-7 z-10 h-full px-4 md:px-0">
+        <div className="relative grid grid-cols-7  md:grid-cols-7 z-10 h-full px-4 md:px-0">
           {stepLabels.slice(0, totalSteps).map((step, index) => {
             const stepNum = index + 1;
             const isCompleted = stepNum < currentStep;
