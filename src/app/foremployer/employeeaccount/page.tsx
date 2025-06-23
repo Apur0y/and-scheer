@@ -5,7 +5,6 @@ import React from 'react'
 
 function EmployeeAccount() {
     return (
-        <div>
             <Container>
                 <div className='flex justify-center items-center gap-6'>
                     <div className='w-[578px]'>
@@ -18,7 +17,6 @@ function EmployeeAccount() {
                     </div>
                 </div>
             </Container>
-        </div>
     )
 }
 
