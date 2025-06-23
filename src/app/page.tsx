@@ -2,7 +2,7 @@
 import Banner from "@/page-components/Banner/Banner";
 import Loginform from "@/page-components/LoginForm";
 import Navbar from "@/page-components/Navbar";
-import ChooseUs from "../components/SectionHeader";
+import ChooseUs from "../components/ChooseUs";
 import RecentJob from "./alloveruser/recentJobs/RecentJob";
 
 

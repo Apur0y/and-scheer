@@ -1,4 +1,5 @@
 "use client"
+import FormInput from '@/components/FormInput';
 import Input from '@/components/Input'
 import Link from 'next/link';
 import React from 'react'
@@ -60,6 +61,9 @@ export default function Loginform() {
             {...register("email", { required: true })}
             />
             <Input label="Password" type="password" placeholder="password" 
+            {...register("password", { required: true })}
+            />
+            <FormInput label="Password" type="password" placeholder="password" 
             {...register("password", { required: true })}
             />
           </div>
