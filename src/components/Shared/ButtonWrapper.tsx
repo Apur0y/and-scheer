@@ -1,18 +1,18 @@
 "use client";
 
+import React from "react";
+// Adjust path if different
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
-import SharedButton from "./primaryButton";
+import SharedButton from "./SharedButton";
 
 interface ButtonWrapperProps {
   text?: string;
-  action?: keyof typeof actionMap;
+  action?: string;
   bgColor?: string;
   className?: string;
-  icon?: keyof typeof iconMap;
+  icon?: string;
+  type?: "button" | "submit" | "reset";
 }
-
-const iconMap = { "arrow-right": ArrowRightIcon };
-const actionMap = { log: () => console.log("Button clicked!") };
 
 const ButtonWrapper: React.FC<ButtonWrapperProps> = ({
   text = "Next",
@@ -20,9 +20,19 @@ const ButtonWrapper: React.FC<ButtonWrapperProps> = ({
   bgColor = "#28C76F",
   className = "",
   icon = "arrow-right",
+  type = "button",
 }) => {
+  const iconMap: {
+    [key: string]: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  } = {
+    "arrow-right": ArrowRightIcon,
+  };
+  const actionMap: { [key: string]: () => void } = {
+    log: () => console.log("Button clicked!"),
+    submit: () => {},
+  };
   const IconComponent = iconMap[icon] || null;
-  const handleClick = action ? actionMap[action] || (() => {}) : () => {};
+  const handleClick = action ? actionMap[action] : undefined;
 
   return (
     <SharedButton
