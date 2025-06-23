@@ -5,7 +5,7 @@ import React from 'react'
 
 export default function TopTalent() {
     return (
-        <div>
+        <div className='bg-[#F8F8F8]'>
             <Container>
                 <div>
                     <InfoSection
@@ -19,6 +19,8 @@ export default function TopTalent() {
                     ></InfoSection>
                 </div>
             </Container>
+
+
         </div>
     )
 }

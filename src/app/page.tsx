@@ -7,6 +7,7 @@ import RecentJob from "./alloveruser/recentJobs/RecentJob";
 import AboutUs from "./alloveruser/AboutUs/page";
 import PerfectJob from "./alloveruser/perfectJob/page";
 import TopTalent from "./alloveruser/TopTalent/page";
+import SuggestedCourses from "./alloveruser/Suggested/page";
 
 
 
@@ -23,7 +24,7 @@ export default function Home() {
           <AboutUs></AboutUs>
           <PerfectJob></PerfectJob>
           <TopTalent></TopTalent>
-
+          <SuggestedCourses></SuggestedCourses>
 
 
 

@@ -5,7 +5,7 @@ import { BsArrowRight } from 'react-icons/bs'
 
 export default function AboutUs() {
     return (
-        <div className='bg-gray-50'>
+        <div className='bg-[#F8F8F8]'>
             <Container>
                 <div>
                     <div className="flex flex-col md:flex-row items-center gap-10 px-6  max-w-6xl mx-auto">

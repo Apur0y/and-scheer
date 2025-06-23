@@ -6,6 +6,7 @@ import { BsArrowRight } from "react-icons/bs";
 
 export default function Banner() {
   return (
+    
     <div className=" flex  md:justify-around px-5   bg-gray-100">
 
       {/* left div site */}
