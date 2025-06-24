@@ -6,7 +6,8 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-white border-b border-gray-200 px-4 py-3">
+    
+    <nav className="bg-white border-b border-gray-200  py-3 max-w-[1420px] mx-auto">
       <div className="w-11/12 mx-auto flex flex-wrap items-center justify-between">
         {/* Left: Logo */}
         <div className="flex items-center space-x-2">

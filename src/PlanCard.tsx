@@ -19,7 +19,7 @@ export default function PackageCard({
     onButtonClick,
 }: PackageCardProps) {
     return (
-        <div className=" md:max-w-[457px] w-full  bg-white  rounded-lg shadow-md px-8 py-5 flex flex-col">
+        <div className=" md:max-w-[457px] w-full border border-gray-100  bg-white  rounded-lg shadow-md px-8 py-5 flex flex-col">
             {/* Price & Plan Type */}
             <div className="text-center mb-12">
                 <div className=" "><span className="text-green-600 text-2xl md:text-4xl  font-semibold">{price}</span>/month</div>
