@@ -14,13 +14,15 @@ interface RecentJobCardProps {
 
 export default function RecentJobCard({ job }: RecentJobCardProps) {
   return (
-    <div className=' max-w-md border border-gray-200 rounded shadow-md p-3 '>
+    <div className=' max-w-md border border-gray-100 rounded-lg shadow-md p-3 bg-white '>
         <div className='flex'>
             <img src={job.icons ||""} alt="" className='h-8 w-8 rounded-full bg-sky-800'/>
             <h1 className='text-xl font-semibold'>{job.name}</h1>
         </div>
         <h2 className='text-md  font-semibold'>{job.position}</h2>
         <p className='text-gray-500'>{job.location}</p>
+
+    <hr className="my-3 border-t border-gray-200" />
 
         <div className='flex items-center justify-between'>
             <h1>{job.salary}/month</h1>

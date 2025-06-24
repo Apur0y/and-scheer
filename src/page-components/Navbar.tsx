@@ -8,8 +8,8 @@ export default function Navbar() {
                 <div className=" w-11/12  mx-auto flex flex-wrap items-center justify-between">
                     {/* Left: Logo + App Name */}
                     <div className="flex items-center space-x-2">
-                        <img src="/logo.svg" alt="Logo" className="h-8 w-8" />
-                        <span className="font-bold text-lg">Superjob</span>
+                        <img src="/logo.png" alt="Logo" className="h-[72] w-[153]" />
+                        {/* <span className="font-bold text-lg">Superjob</span> */}
                     </div>
 
                     {/* Right: Nav Links */}
