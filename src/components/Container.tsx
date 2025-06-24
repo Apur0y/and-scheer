@@ -1,13 +1,11 @@
-import { ReactNode } from "react"
+import { ReactNode } from "react";
 
 type containerProps = {
-    children : ReactNode
+  children: ReactNode;
+};
+
+function Container({ children }: containerProps) {
+  return <div className="max-w-[1420px] mx-auto py-20">{children}</div>;
 }
 
-function Container({children} : containerProps) {
-  return (
-    <div className="max-w-[1420px] mx-auto py-20">{children}</div>
-  )
-}
-
-export default Container
+export default Container;
