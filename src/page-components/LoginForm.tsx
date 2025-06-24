@@ -14,7 +14,7 @@ export default function Loginform() {
 
   const { register, handleSubmit } = useForm<FormData>();
 
-  const onSubmit = (data:FormData) => {
+  const onSubmit = (data: FormData) => {
     console.log(data, "Check the data here: ");
   }
 
@@ -23,9 +23,9 @@ export default function Loginform() {
   return (
 
 
- <section className="max-w-6xl mx-auto min-h-screen flex items-center justify-center md:px-4 ">
+    <section className="max-w-6xl mx-auto min-h-screen flex items-center justify-center md:px-4 ">
       <div className="flex w-full  rounded-lg overflow-hidden ">
-        
+
         {/* Left: Image Section */}
         <div className="w-1/2 hidden md:block ">
           <img
@@ -38,42 +38,40 @@ export default function Loginform() {
         {/* Right: Form Section */}
         <div className="w-full md:w-1/2 p-8 flex flex-col justify-center">
 
-        <div className='flex justify-center items-center flex-col'>
-  {/* Logo */}
-          <div className="mb-6">
-            <img src="/logo.svg" alt="Logo" className="h-10" />
+          <div className='flex justify-center items-center flex-col'>
+            {/* Logo */}
+            <div className="mb-6">
+              <img src="/logo.svg" alt="Logo" className="h-10" />
+            </div>
+
+            {/* Welcome Message */}
+
+            <h2 className="text-2xl md:text-4xl font-bold mb-4">Hi, Welcome Back!</h2>
+            <p className="text-sm text-gray-600 mb-6">
+              Please exter your email and password below!
+            </p>
+
           </div>
+          <form onSubmit={handleSubmit(onSubmit)}>
 
-          {/* Welcome Message */}
 
-          <h2 className="text-2xl md:text-4xl font-bold mb-4">Hi, Welcome Back!</h2>
-          <p className="text-sm text-gray-600 mb-6">
-            Please exter your email and password below!
-          </p>
+            {/* Input Fields */}
+            <div className="space-y-4 mb-6">
+              <Input label="Email Address" type="email" placeholder="you@example.com"
+                {...register("email", { required: true })}
+              />
+              <Input label="Password" type="password" placeholder="password"
+                {...register("password", { required: true })}
+              />
 
-        </div>
-        <form onSubmit={handleSubmit(onSubmit)}>
+            </div>
 
-        
-          {/* Input Fields */}
-          <div className="space-y-4 mb-6">
-            <Input label="Email Address" type="email" placeholder="you@example.com" 
-            {...register("email", { required: true })}
-            />
-            <Input label="Password" type="password" placeholder="password" 
-            {...register("password", { required: true })}
-            />
-            <FormInput label="Password" type="password" placeholder="password" 
-            {...register("password", { required: true })}
-            />
-          </div>
+            {/* Login Button */}
+            <button className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition">
+              Login
+            </button>
 
-          {/* Login Button */}
-          <button className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition">
-            Login
-          </button>
-
-        </form>
+          </form>
 
           {/* Divider */}
           <div className="flex items-center my-6">

@@ -79,7 +79,7 @@ export default function RecentJob() {
     ]
 
     return (
-        <div className='w-11/12 mx-auto py-4'>
+        <div className=' py-4 bg-[#F8F8F8]'>
             <h1 className='text-2xl font-semibold my-4'>Recent Job</h1>
 
             <div className=''>
