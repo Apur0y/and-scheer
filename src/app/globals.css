@@ -60,3 +60,22 @@ body {
 .shadow-white-bottom {
   box-shadow: 0px 40px 60px -10px rgba(255, 255, 255, 0.8);
 }
+
+.black-main{
+  @apply text-[#333333]
+}
+
+.para-main{
+  @apply text-[#777777]
+}
+
+.bg-black-button{
+   @apply bg-[#333333]
+}
+
+@theme {
+  --color-scheer-primary: #28C76F;
+  --color-scheer-primary-dark: #333333;
+
+  --color-scheer-body-gray:#777777;
+}

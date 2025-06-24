@@ -19,16 +19,16 @@ export default function PackageCard({
     onButtonClick,
 }: PackageCardProps) {
     return (
-        <div className=" max-w-[457px] w-full  bg-white  rounded-lg shadow-md px-8 py-5 flex flex-col">
+        <div className=" md:max-w-[457px] w-full  bg-white  rounded-lg shadow-md px-8 py-5 flex flex-col">
             {/* Price & Plan Type */}
             <div className="text-center mb-12">
-                <div className=" "><span className="text-green-600 text-4xl  font-semibold">{price}</span>/month</div>
+                <div className=" "><span className="text-green-600 text-2xl md:text-4xl  font-semibold">{price}</span>/month</div>
 
             </div>
 
             {/* Package Name */}
             <p className="text-sm text-gray-500">{planType}</p>
-            <h1 className="text-4xl  font-semibold  mb-8">{packageName}</h1>
+            <h1 className="text-2xl md:text-4xl   font-semibold  mb-8">{packageName}</h1>
 
             {/* Permissions */}
             <ul className="space-y-4 text-gray-700 mb-6">
