@@ -5,13 +5,8 @@ type containerProps = {
 };
 
 
-function Container({ children }: containerProps) {
+const Container = ({ children }: containerProps) => {
   return <div className="max-w-[1420px] mx-auto py-20">{children}</div>;
-
-function Container({children} : containerProps) {
-  return (
-    <div className="max-w-[1420px] mx-auto py-20 px-4">{children}</div>
-  )
 
 }
 
