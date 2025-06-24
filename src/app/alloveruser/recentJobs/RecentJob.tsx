@@ -80,8 +80,8 @@ export default function RecentJob() {
 
     return (
         <div className='bg-[#F8F8F8] '>
-            <div className='   px-11 md:px-15'>
-                <h1 className='text-2xl font-semibold my-4'>Recent Job</h1>
+            <div className=' py-15  px-11 md:px-15'>
+                <h1 className='text-2xl md:text-4xl font-semibold mb-4'>Recent Job</h1>
 
 
                 <div className="relative">
@@ -107,7 +107,7 @@ export default function RecentJob() {
                         }}
                     >
                         {jobs.map((job, index) => (
-                            <SwiperSlide key={index } className='py-4'>
+                            <SwiperSlide key={index } className='pb-2'>
                                 <RecentJobCard job={job} />
                             </SwiperSlide>
                         ))}

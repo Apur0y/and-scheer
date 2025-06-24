@@ -26,7 +26,7 @@ export default function Home() {
       <Navbar></Navbar>
       <Banner></Banner>
       <RecentJob></RecentJob>
-      <SimpleSlider></SimpleSlider>
+    
       <ChooseUs></ChooseUs>
       <AboutUs></AboutUs>
       <PerfectJob></PerfectJob>
