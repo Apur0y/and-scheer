@@ -1,129 +1,85 @@
 'use client';
 import Link from "next/link";
 import React, { useState } from "react";
+import { FiMenu, FiX } from "react-icons/fi"; // For modern icons
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  return (
-    
-    <nav className="bg-white border-b border-gray-200  py-3 max-w-[1420px] mx-auto">
-      <div className="w-11/12 mx-auto flex flex-wrap items-center justify-between">
-        {/* Left: Logo */}
-        <div className="flex items-center space-x-2">
-          <img src="/logo.png" alt="Logo" className="h-[72px] w-[153px]" />
-          {/* <span className="font-bold text-lg">Superjob</span> */}
-        </div>
+  const navItems = [
+    { name: "Home", href: "#" },
+    { name: "For Job Seekers", href: "#" },
+    { name: "For Employers", href: "#" },
+    { name: "Course", href: "#" },
+    { name: "Pricing", href: "#" },
+  ];
 
-        {/* Desktop Nav Links */}
-        <div className="hidden md:flex items-center space-x-4 text-sm text-gray-700 font-medium">
-          <Link href="#" className="hover:text-green-600">
-            Home
-          </Link>
-          <span>|</span>
-          <Link href="#" className="hover:text-green-600">
-            For Job Seekers
-          </Link>
-          <span>|</span>
-          <Link href="#" className="hover:text-green-600">
-            For Employers
-          </Link>
-          <span>|</span>
-          <Link href="#" className="hover:text-green-600">
-            Course
-          </Link>
-          <span>|</span>
-          <Link href="#" className="hover:text-green-600">
-            Pricing
-          </Link>
-          <span>|</span>
+  return (
+    <nav className="bg-white border-b border-gray-100 shadow-sm sticky top-0 z-50">
+      <div className="max-w-[1420px] mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+        {/* Logo */}
+        <Link href={'/'}>
+        <div className="flex items-center space-x-2">
+          <img src="/logo.png" alt="Logo" className="h-[40px] w-auto" />
+        </div>
+        </Link>
+
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex space-x-6 items-center text-sm font-medium text-gray-700">
+          {navItems.map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              className="hover:text-main-green transition-colors duration-200"
+            >
+              {item.name}
+            </Link>
+          ))}
           <img
             src=""
-            alt=""
-            className="h-12 w-12 bg-green-300 rounded-full p-2"
+            alt="Profile"
+            className="h-10 w-10 bg-green-300 rounded-full p-2"
           />
         </div>
 
-        {/* Mobile Menu Toggle Button */}
+        {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-gray-700 focus:outline-none"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="md:hidden text-gray-700 focus:outline-none"
           aria-label="Toggle menu"
         >
-          {/* Hamburger icon */}
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            {mobileMenuOpen ? (
-              // X icon when open
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            ) : (
-              // Hamburger icon when closed
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            )}
-          </svg>
+          {mobileMenuOpen ? (
+            <FiX className="w-6 h-6" />
+          ) : (
+            <FiMenu className="w-6 h-6" />
+          )}
         </button>
       </div>
 
       {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200 w-11/12 mx-auto py-4">
-          <Link
-            href="#"
-            className="block py-2 text-gray-700 hover:text-green-600 font-medium"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            Home
-          </Link>
-          <Link
-            href="#"
-            className="block py-2 text-gray-700 hover:text-green-600 font-medium"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            For Job Seekers
-          </Link>
-          <Link
-            href="#"
-            className="block py-2 text-gray-700 hover:text-green-600 font-medium"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            For Employers
-          </Link>
-          <Link
-            href="#"
-            className="block py-2 text-gray-700 hover:text-green-600 font-medium"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            Course
-          </Link>
-          <Link
-            href="#"
-            className="block py-2 text-gray-700 hover:text-green-600 font-medium"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            Pricing
-          </Link>
-          {/* You can add the profile icon or other stuff here */}
+      <div
+        className={`md:hidden transition-all duration-300 overflow-hidden ${
+          mobileMenuOpen ? "max-h-screen" : "max-h-0"
+        }`}
+      >
+        <div className="bg-white border-t border-gray-100 px-4 py-4 space-y-3">
+          {navItems.map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              className="block text-gray-700 hover:text-main-green font-medium"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {item.name}
+            </Link>
+          ))}
           <img
             src=""
-            alt=""
-            className="h-12 w-12 bg-green-300 rounded-full p-2 mt-2"
+            alt="Profile"
+            className="h-10 w-10 bg-green-300 rounded-full p-2 mt-2"
           />
         </div>
-      )}
+      </div>
     </nav>
   );
 }
