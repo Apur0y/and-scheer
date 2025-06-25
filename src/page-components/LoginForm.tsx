@@ -1,7 +1,9 @@
 "use client"
 import FormInput from '@/components/FormInput';
 import Input from '@/components/Input'
+import Logo from '@/components/MainLogo';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import React from 'react'
 import { useForm } from 'react-hook-form';
 
@@ -13,9 +15,11 @@ interface FormData {
 export default function Loginform() {
 
   const { register, handleSubmit } = useForm<FormData>();
+  const router=useRouter();
 
   const onSubmit = (data: FormData) => {
     console.log(data, "Check the data here: ");
+    router.push("/")
   }
 
 
@@ -41,13 +45,14 @@ export default function Loginform() {
           <div className='flex justify-center items-center flex-col'>
             {/* Logo */}
             <div className="mb-6">
-              <img src="/logo.svg" alt="Logo" className="h-10" />
+
+              <Logo height={120} width={268}></Logo>
             </div>
 
             {/* Welcome Message */}
 
-            <h2 className="text-2xl md:text-4xl font-bold mb-4">Hi, Welcome Back!</h2>
-            <p className="text-sm text-gray-600 mb-6">
+            <h2 className="text-2xl md:text-4xl text-scheer-primary-dark font-bold mb-2">Hi, Welcome Back!</h2>
+            <p className="text-sm text-gray-600 mb-8">
               Please exter your email and password below!
             </p>
 
@@ -56,7 +61,7 @@ export default function Loginform() {
 
 
             {/* Input Fields */}
-            <div className="space-y-4 mb-6">
+            <div className="space-y-4 mb-8  ">
               <Input label="Email Address" type="email" placeholder="you@example.com"
                 {...register("email", { required: true })}
               />
@@ -67,21 +72,21 @@ export default function Loginform() {
             </div>
 
             {/* Login Button */}
-            <button className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition">
+            <button className="w-full bg-green-600 text-white py-3 px-6 rounded-lg hover:bg-green-700 transition">
               Login
             </button>
 
           </form>
 
           {/* Divider */}
-          <div className="flex items-center my-6">
+          <div className="flex items-center my-8">
             <hr className="flex-grow border-gray-300" />
             <span className="mx-2 text-gray-400">or with</span>
             <hr className="flex-grow border-gray-300" />
           </div>
 
           {/* Continue with Google */}
-          <button className="w-full border border-gray-300 py-2 rounded flex items-center justify-center gap-2 hover:bg-gray-100 transition">
+          <button className="w-full border border-gray-300 py-3 px-6 rounded-lg flex items-center justify-center gap-2 hover:bg-gray-100 transition">
             <img
               src="https://www.svgrepo.com/show/475656/google-color.svg"
               alt="Google"
@@ -89,7 +94,7 @@ export default function Loginform() {
             />
             Login with Google
           </button>
-          <div className='flex justify-center gap-2 text-gray-700 flex-col md:flex-row '>
+          <div className='flex justify-center gap-2 text-gray-700  mt-3'>
             <p className='text-center'>If you don't have any account please</p>
             <Link href={"/register"} className='text-green-600 underline font-semibold'>Create Account</Link>
           </div>

@@ -40,7 +40,7 @@ const cardData = [
           {cardData.map((card, index) => (
             <div
               key={index}
-              className="flex flex-col items-center p-6 border border-gray-100 bg-white shadow-md rounded-lg w-full sm:w-[30%] min-w-[280px] max-w-[457px]"
+              className="flex flex-col items-center p-6 border border-gray-100 bg-white shadow-md rounded-lg w-full sm:w-[30%] min-w-[280px] max-w-[457px] hover:scale-105 transition-all duration-300 hover:bg-green-50"
             >
               <div className="mb-4 ">{card.icon}</div>
               <h3 className="text-lg font-semibold mb-2">{card.title}</h3>

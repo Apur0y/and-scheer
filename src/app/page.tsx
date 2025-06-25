@@ -23,7 +23,7 @@ export default function Home() {
 
   return (
     <div className="black-main">
-  
+    <Navbar></Navbar>
       <Banner></Banner>
       <RecentJob></RecentJob>
     

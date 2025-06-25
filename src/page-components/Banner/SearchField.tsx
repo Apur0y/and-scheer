@@ -6,6 +6,8 @@ import { FaBriefcase, FaBuilding, FaMapMarkerAlt, FaSearch } from 'react-icons/f
 
 export default function SearchField() {
 
+  const companies=["Google", "Open Ai","Meta"]
+
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const onSubmit = (data) => {
@@ -35,11 +37,14 @@ export default function SearchField() {
             <FaBuilding className="text-gray-500" />
             <select
               {...register("company", { required: true })}
-              className="flex-1 bg-transparent focus:outline-none">
-              <option value="">Select Company</option>
-              <option value="openai">OpenAI</option>
-              <option value="google">Google</option>
-              <option value="meta">Meta</option>
+               className="flex-1    text-gray-700">
+                <option  value="">Select Company </option>
+              {
+                
+                companies.map(company=>(
+                  <option value={company}>{company}</option>
+                ))
+              }
             </select>
           </div>
 
@@ -57,7 +62,7 @@ export default function SearchField() {
           </div>
 
           {/* Search Button */}
-          <button className="flex items-center gap-2 px-6 py-2 bg-neutral-800 text-white rounded hover:bg-neutral-900 transition whitespace-nowrap">
+          <button className="flex items-center gap-2 px-6 py-2 bg-neutral-800 text-white rounded hover:bg-neutral-900 transition whitespace-nowrap cursor-pointer">
             <FaSearch />
             Search
           </button>

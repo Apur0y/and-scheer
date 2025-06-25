@@ -1,13 +1,22 @@
 'use client'
 import Container from '@/components/Container'
 import InfoSection from '@/page-components/TwoCloumn'
+import Image from 'next/image'
 import React from 'react'
 
 export default function TopTalent() {
     return (
-        <div className='bg-[#F8F8F8]'>
+        <div className='bg-[#F8F8F8] relative'>
+            <div className="absolute left-0 bottom-0     z-10">
+                <Image
+                    src='/Pattern3.png'
+                    alt="Pattern"
+                    height={650}
+                    width={656}
+                />
+            </div>
             <Container>
-                <div>
+                <div className='relative z-20'>
                     <InfoSection
                         imageUrl="/talent.jpg"
                         title="Looking for"

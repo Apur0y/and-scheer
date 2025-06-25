@@ -1,6 +1,8 @@
 'use client'
 import Input from '@/components/Input'
+import Logo from '@/components/MainLogo';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
 
@@ -17,8 +19,16 @@ export default function Registerform() {
     const { register, handleSubmit } = useForm<FormData>();
     const [isError, setIsError] = useState  ("");
 
+    const router =useRouter();
+
     const onSubmit = (data: FormData) => {
+        router.push("/")
         console.log(data, "Check the data here: ");
+        try {
+            
+        } catch (error) {
+            setIsError(String(error))
+        }
     }
 
 
@@ -44,12 +54,13 @@ export default function Registerform() {
                     <div className='flex justify-center items-center flex-col'>
                         {/* Logo */}
                         <div className="mb-6">
-                            <img src="/logo.svg" alt="Logo" className="h-10" />
+                            {/* <img src="/logo.svg" alt="Logo" className="h-10" /> */}
+                             <Logo height={120} width={268}></Logo>
                         </div>
 
                         {/* Welcome Message */}
 
-                        <h2 className="text-2xl md:text-4xl font-bold mb-4">Create your account!</h2>
+                        <h2 className="text-2xl md:text-4xl font-bold mb-8">Create your account!</h2>
                         <p className="text-sm text-gray-600 mb-6 text-center">
                             Welcome to Passit, Please enter the information requested to create <br /> your account!
                         </p>
@@ -58,7 +69,7 @@ export default function Registerform() {
                     <form onSubmit={handleSubmit(onSubmit)}>
 
                         {/* Input Fields */}
-                        <div className="space-y-4 mb-6">
+                        <div className="space-y-4 mb-8">
                             <div className='flex flex-col md:flex-row gap-5'>
                                 <Input label="First Name" type="text" placeholder="John"
                                     {...register("firstName", { required: true })}
@@ -88,21 +99,21 @@ export default function Registerform() {
                         )}
 
                         {/* Login Button */}
-                        <button className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition">
+                        <button className="w-full py-3 px-6 bg-green-600 text-white  rounded-lg hover:bg-green-700 transition">
                             Login
                         </button>
 
                     </form>
 
                     {/* Divider */}
-                    <div className="flex items-center my-6">
+                    <div className="flex items-center my-8">
                         <hr className="flex-grow border-gray-300" />
                         <span className="mx-2 text-gray-400">or with</span>
                         <hr className="flex-grow border-gray-300" />
                     </div>
 
                     {/* Continue with Google */}
-                    <button className="w-full border border-gray-300 py-2 rounded flex items-center justify-center gap-2 hover:bg-gray-100 transition">
+                    <button className="w-full border border-gray-300 py-3 px-6 rounded-lg flex items-center justify-center gap-2 hover:bg-gray-100 transition">
                         <img
                             src="https://www.svgrepo.com/show/475656/google-color.svg"
                             alt="Google"
@@ -110,7 +121,7 @@ export default function Registerform() {
                         />
                         Login with Google
                     </button>
-                    <div className='flex justify-center gap-2 text-gray-700 flex-col md:flex-row '>
+                    <div className='flex justify-center items-center gap-2 text-gray-700   mt-3'>
                         <p className='text-center'>If you don't have any account please</p>
                         <Link href={"/login"} className='text-green-600 underline font-semibold'>Login</Link >
                     </div>

@@ -6,11 +6,20 @@ import { BsArrowRight } from "react-icons/bs";
 
 export default function Banner() {
   return (
-    
-  <div className="relative overflow-hidden w-full">
-      <div className="flex py-15 md:py-28 md:justify-around px-5">
+
+    <div className="relative overflow-hidden w-full min-h-screen ">
+      <div className="absolute right-0">
+        <Image
+          src='/Pattern.png'
+          alt="Pattern"
+          height={1146}
+          width={1156}
+        />
+      </div>
+
+      <div className="flex py-15 md:py-28 md:justify-around px-5 ">
         {/* Left side */}
-        <div className="flex flex-col gap-8 z-10 justify-center text-left">
+        <div className="flex flex-col gap-8  justify-center text-left z-30">
           <div className="flex flex-col gap-5">
             <h1 className="text-5xl md:text-7xl text-left font-semibold md:font-bold">
               Your <span className="text-green-600">AI-Powered <br /> Career</span> Platform
@@ -24,8 +33,8 @@ export default function Banner() {
           <SearchField />
 
           <div className="flex gap-3 mt-4">
-            <button className="border px-3 text-xs md:text-base rounded py-2">For Employers</button>
-            <button className="text-white text-xs md:text-base font-semibold px-3 rounded py-2 flex gap-1 bg-green-600">
+            <button className="border px-3 text-xs md:text-base rounded py-2 hover:bg-green-300 hover:text-white transition-all duration-300">For Employers</button>
+            <button className="text-white text-xs md:text-base font-semibold px-3 rounded py-2 flex gap-1 bg-scheer-primary hover:bg-green-600 transition-all duration-300">
               Create AI Resume <BsArrowRight className="my-auto" />
             </button>
           </div>
@@ -36,14 +45,20 @@ export default function Banner() {
 
         {/* Positioned image */}
         <div className="absolute left-1/2 top-10 md:top-20 md:left-3/5 ">
-          <Image
-            src="/man.png"
-            alt="AI Career"
-            height={884}
-            width={626} 
-            className="w-[600px] md:w-[800px] object-contain shadow-white-bottom"
-          />
-          
+          <div className="relative">
+            {/* White shadow/glow */}
+            <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-gradient via-gradient to-white/30  z-10" ></div>
+
+            {/* Actual image on top */}
+            <Image
+              src="/bannerimage.png"
+              alt="AI Career"
+              height={884}
+              width={626}
+              className="relative  w-full object-contain"
+            />
+          </div>
+
         </div>
       </div>
     </div>

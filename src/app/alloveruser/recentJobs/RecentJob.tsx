@@ -20,7 +20,7 @@ export default function RecentJob() {
 
     const jobs = [
         {
-            icnos: "",
+            icnos: "/company1.png",
             name: "BLUE Technology",
             position: "Full Stack Developer",
             location: "Dhaka, Bangladesh",
@@ -89,7 +89,7 @@ export default function RecentJob() {
                     <div className="relative">
                         {/* Custom arrows */}
                         <div className="swiper-button-prev-custom custom-arrow left-[-50px]" />
-                        <div className="swiper-button-next-custom custom-arrow right-[-50px]" />
+                        <div className="swiper-button-next-custom custom-arrow md:right-[-50px] right-[-40px]" />
 
                         <Swiper
                             spaceBetween={30}
