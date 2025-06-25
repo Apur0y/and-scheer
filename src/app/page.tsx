@@ -13,6 +13,7 @@ import JObSeekerPlan from "./alloveruser/JobSeekerPlan/page";
 import EmployerPlan from "./alloveruser/EmployerPlan/page";
 import Newslatter from "./alloveruser/Newslatter/page";
 import Footer from "./alloveruser/Footer/page";
+import SimpleSlider from "@/page-components/Banner/RecentSwiper";
 
 
 
@@ -21,15 +22,17 @@ export default function Home() {
 
 
   return (
-    <div>
-      <Navbar></Navbar>
+    <div className="black-main">
+  
       <Banner></Banner>
       <RecentJob></RecentJob>
+    
       <ChooseUs></ChooseUs>
       <AboutUs></AboutUs>
       <PerfectJob></PerfectJob>
       <TopTalent></TopTalent>
       <SuggestedCourses></SuggestedCourses>
+
       
       <JObSeekerPlan></JObSeekerPlan>
       <EmployerPlan></EmployerPlan>

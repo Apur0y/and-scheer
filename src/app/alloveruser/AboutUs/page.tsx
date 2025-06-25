@@ -5,7 +5,7 @@ import { BsArrowRight } from 'react-icons/bs'
 
 export default function AboutUs() {
     return (
-        <div className='bg-[#F8F8F8]'>
+        <div className='bg-[#F8F8F8]  '>
             <Container>
                 <div>
                     <div className="flex flex-col md:flex-row items-center gap-10 px-6  max-w-6xl mx-auto">
@@ -19,14 +19,14 @@ export default function AboutUs() {
                         </div>
 
                         {/* Right - Text Content */}
-                        <div className="w-full md:w-1/2 space-y-6">
+                        <div className="w-full md:w-1/2 space-y-3 md:space-y-6">
                             <h2 className="text-2xl md:text-5xl font-semibold">About Us!</h2>
-                            <h3 className="text-2xl md:text-3xl font-bold text-gray-800">
+                            <h3 className="text-lg md:text-2xl font-bold ">
                                 The Future of Job Search, Powered by AI
                             </h3>
 
                             {/* Description Paragraphs */}
-                            <div className="space-y-4 text-gray-600">
+                            <div className="space-y-4 para-main">
                                 <p>
                                     We're revolutionizing how people find work by combining advanced AI with human-centric design.
                                 </p>
@@ -40,8 +40,8 @@ export default function AboutUs() {
 
                             {/* Our Values */}
                             <div>
-                                <h4 className="text-xl font-semibold text-gray-800 mb-2">Our Values:</h4>
-                                <ul className="list-disc list-inside text-gray-600 space-y-1">
+                                <h4 className="text-xl font-semibold mb-2">Our Values:</h4>
+                                <ul className="list-disc list-inside para-main space-y-1">
                                     <li>Innovation: Constantly pushing boundaries with AI-driven solutions.</li>
                                     <li>Transparency: Clear communication and ethical technology use.</li>
                                     <li>Efficiency: Streamlining the job search experience end to end.</li>
@@ -49,7 +49,7 @@ export default function AboutUs() {
                             </div>
 
                             {/* Button */}
-                            <button className="mt-4 px-6 py-3 flex bg-neutral-800 text-white font-semibold rounded hover:bg-neutral-900 transition">
+                            <button className="mt-4 px-6 py-3 flex bg-black-button text-white font-semibold rounded hover:bg-neutral-900 transition">
                                 Join Us Today <BsArrowRight className='my-auto ml-2'> </BsArrowRight>
                             </button>
                         </div>

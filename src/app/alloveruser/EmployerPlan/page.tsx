@@ -43,7 +43,7 @@ export default function EmployerPlan() {
                 ></ComponentHeader>
                 
 
-                <div className="grid grid-cols-1 sm:grid-cols-2  gap-6 px-4 md:px-0">
+                <div className="grid grid-cols-1 sm:grid-cols-2 mt-12  gap-6 px-4 md:px-0">
                     {SeekerPlan.map((plan, index) => (
                         <div key={index} className="flex justify-center">
                             <PackageCard

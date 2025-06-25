@@ -20,7 +20,7 @@ export default function InfoSection({
   onButtonClick,
 }: InfoSectionProps) {
   return (
-    <div className={`flex flex-col  items-center gap-14 md:px-6 py-12 max-w-6xl mx-auto ${className}`}>
+    <div className={`flex flex-col  items-center gap-10 md:gap-14 md:px-6 py-12 max-w-6xl mx-auto ${className}`}>
       {/* Left - Image */}
       <div className="w-full md:w-1/2">
         <img
@@ -31,16 +31,16 @@ export default function InfoSection({
       </div>
 
       {/* Right - Content */}
-      <div className="w-full md:w-1/2 space-y-12">
+      <div className="w-full md:w-1/2 space-y-8 md:space-y-12">
         <div className="space-y-4 ">
-          <h2 className="text-2xl md:text-4xl font-semibold text-gray-800">{title} <span className="text-green-600">{title2}</span></h2>
+          <h2 className="text-2xl md:text-4xl font-semibold ">{title} <span className="text-scheer-primary">{title2}</span></h2>
 
-          <p className="text-gray-600">{description}</p>
+          <p className="para-main">{description}</p>
         </div>
 
         <button
           onClick={onButtonClick}
-          className="px-6 py-3 bg-neutral-800 text-white font-semibold rounded hover:bg-neutral-900 transition flex"
+          className="px-6 py-3 bg-black-button text-white font-semibold rounded bg-scheer-primary transition flex"
         >
           {buttonText}<BsArrowRight className='my-auto ml-2'> </BsArrowRight>
         </button>
