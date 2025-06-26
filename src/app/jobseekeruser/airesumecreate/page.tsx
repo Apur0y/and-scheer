@@ -1,5 +1,6 @@
 import Container from "@/components/Container";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export default function ResumeCreate() {
@@ -33,9 +34,9 @@ export default function ResumeCreate() {
             Follow these simple steps to create a standout resume that will get
             you <br /> noticed by top employers.
           </p>
-          <button className="px-18 py-4 bg-[#28C76F] text-[#FCFCFC] font-semibold rounded-lg hover:bg-green-700">
+          <Link href={"/jobseekeruser/personalInformation"} className="px-18 py-4 bg-[#28C76F] text-[#FCFCFC] font-semibold rounded-lg hover:bg-green-700">
             Start Now
-          </button>
+          </Link>
         </div>
       </div>
     </Container>
