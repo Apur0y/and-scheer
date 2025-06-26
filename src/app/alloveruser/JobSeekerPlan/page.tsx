@@ -6,17 +6,18 @@ import React from 'react'
 export default function JObSeekerPlan() {
     const SeekerPlan = [
         {
-            price: "$29.99",
+            price: "$9.99",
             planType: "Job Seeker Plan",
-            packageName: "Premium Plan",
+            packageName: "Basic Plan",
             permissions: [
-                "Unlimited job applications",
-                "Priority profile visibility",
-                "AI resume feedback",
+                "Limited job applications",
+                "Basic profile visibility",
+                "No resume feedback",
                 "All free tier benifits included",
-                "Receive up to 25 job suggestions"
+                "Receive up to 5 job suggestions"
             ]
         },
+        
         {
             price: "$19.99",
             planType: "Job Seeker Plan",
@@ -30,17 +31,18 @@ export default function JObSeekerPlan() {
             ]
         },
         {
-            price: "$9.99",
+            price: "$29.99",
             planType: "Job Seeker Plan",
-            packageName: "Basic Plan",
+            packageName: "Premium Plan",
             permissions: [
-                "Limited job applications",
-                "Basic profile visibility",
-                "No resume feedback",
+                "Unlimited job applications",
+                "Priority profile visibility",
+                "AI resume feedback",
                 "All free tier benifits included",
-                "Receive up to 5 job suggestions"
+                "Receive up to 25 job suggestions"
             ]
         }
+        
     ]
     return (
         <div className='bg-[#F8F8F8]'>

@@ -25,8 +25,8 @@ export default function RecentJobCard({ job }: RecentJobCardProps) {
     <hr className="xl:my-3 my-2 border-t border-gray-200" />
 
         <div className='flex items-center justify-between'>
-            <h1 className='text-xs xl:text-base'><span className='text-md lg:text-xl font-semibold'>{job.salary}</span>/Month</h1>
-            <button className='xl:px-6 px-2 py-2 xl:py-3 main-bg rounded xl:text-base  text-xs text-white cursor-pointer'>Apply Now</button>
+            <h1 className='text-xs xl:text-base'><span className='text-md 2xl:text-xl font-semibold'>{job.salary}</span>/Month</h1>
+            <button className='2xl:px-6 px-2 py-2 2xl:py-3 main-bg rounded xl:text-base  text-xs text-white cursor-pointer'>Apply Now</button>
         </div>
 
     </div>

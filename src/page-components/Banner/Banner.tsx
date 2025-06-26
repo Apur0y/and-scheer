@@ -44,7 +44,7 @@ export default function Banner() {
         <div className="hidden md:block">{/* Empty or add future content */}</div>
 
         {/* Positioned image */}
-        <div className="absolute left-1/2 top-10 md:top-20 md:left-3/5 ">
+        <div className="absolute left-1/2 top-10 md:top-20 md:left-3/5 lg:top-48 xl:top-28 ">
           <div className="relative">
             {/* White shadow/glow */}
             <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-gradient via-gradient to-white/30  z-10" ></div>

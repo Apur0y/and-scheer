@@ -8,9 +8,15 @@ export default function SearchField() {
 
   const companies=["Google", "Open Ai","Meta"]
 
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  interface SearchFormInputs {
+    jobName: string;
+    company: string;
+    location: string;
+  }
 
-  const onSubmit = (data) => {
+  const { register, handleSubmit, formState: { errors } } = useForm<SearchFormInputs>();
+
+  const onSubmit = (data: SearchFormInputs) => {
     console.log(data, "Check the data here: ");
   }
 
@@ -51,14 +57,12 @@ export default function SearchField() {
           {/* Location Select */}
           <div className="flex items-center border-b border-gray-300 px-3 py-2 flex-1 gap-2">
             <FaMapMarkerAlt className="text-gray-500" />
-            <select
+            <input
+              type="text"
+              placeholder="Location"
+              className="flex-1 bg-transparent focus:outline-none"
               {...register("location", { required: true })}
-              className="flex-1 bg-transparent focus:outline-none">
-              <option value="">Select Location</option>
-              <option value="new-york">New York</option>
-              <option value="sf">San Francisco</option>
-              <option value="remote">Remote</option>
-            </select>
+            />
           </div>
 
           {/* Search Button */}

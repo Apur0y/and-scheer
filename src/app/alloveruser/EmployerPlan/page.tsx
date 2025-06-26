@@ -6,6 +6,19 @@ import React from 'react'
 export default function EmployerPlan() {
 
     const SeekerPlan = [
+       
+             {
+            price: "$19.99",
+            planType: "Job Seeker Plan",
+            packageName: "Standard Plan",
+            permissions: [
+                "Limited job applications",
+                "Standard profile visibility",
+                "Basic resume feedback",
+                "All free tier benifits included",
+                "Receive up to 10 job suggestions"
+            ]
+        }, 
         {
             price: "$29.99",
             planType: "Job Seeker Plan",
@@ -18,19 +31,7 @@ export default function EmployerPlan() {
                 "Receive up to 25 job suggestions"
             ]
         },
-        {
-            price: "$19.99",
-            planType: "Job Seeker Plan",
-            packageName: "Standard Plan",
-            permissions: [
-                "Limited job applications",
-                "Standard profile visibility",
-                "Basic resume feedback",
-                "All free tier benifits included",
-                "Receive up to 10 job suggestions"
-            ]
-        },
-
+   
     ]
 
     return (
