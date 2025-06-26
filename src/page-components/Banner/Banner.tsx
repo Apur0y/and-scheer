@@ -45,9 +45,9 @@ export default function Banner() {
 
         {/* Positioned image */}
         <div className="absolute left-1/2 top-10 md:top-20 md:left-3/5 lg:top-48 xl:top-28 ">
-          <div className="relative">
+          <div className="relative ">
             {/* White shadow/glow */}
-            <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-gradient via-gradient to-white/30  z-10" ></div>
+            <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-transparent via-transparent to-white  z-10 " ></div>
 
             {/* Actual image on top */}
             <Image

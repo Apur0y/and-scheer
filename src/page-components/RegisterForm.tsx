@@ -100,7 +100,7 @@ export default function Registerform() {
 
                         {/* Login Button */}
                         <button className="w-full py-3 px-6 bg-green-600 text-white  rounded-lg hover:bg-green-700 transition">
-                            Login
+                            Register
                         </button>
 
                     </form>
@@ -123,7 +123,7 @@ export default function Registerform() {
                     </button>
                     <div className='flex justify-center items-center gap-2 text-gray-700   mt-3'>
                         <p className='text-center'>If you don't have any account please</p>
-                        <Link href={"/login"} className='text-green-600 underline font-semibold'>Login</Link >
+                        <Link href={"/login"} className='text-scheer-primary underline font-semibold'>Login</Link >
                     </div>
                 </div>
             </div>
