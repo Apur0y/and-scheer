@@ -18,7 +18,7 @@ export default function PersonalInformation() {
   return (
     <Container>
       <div className="min-h-screen p-4">
-        <ProgressBar currentStep={2} totalSteps={7} />
+        <ProgressBar currentStep={7} totalSteps={7} />
         <div className="flex justify-center mt-12">
           <div className="p-6 w-full max-w-[1180px] h-[752px]">
         
@@ -28,8 +28,8 @@ export default function PersonalInformation() {
               ></SectionHeader>
               <ResumeComponent></ResumeComponent>
               <div className="flex gap-12 mt-16">
-                <Button>Download Resume</Button>
-                <Button>Find Your Favorite Job</Button>
+                <Button className = "w-full bg-[#DBDBDB] text-black  py-3 px-6 rounded-lg hover:bg-green-700 transition" name="Download Resume" >Download Resume</Button>
+                <Button name="Find Your Favorite Job">Find Your Favorite Job</Button>
             
               </div>
           </div>
