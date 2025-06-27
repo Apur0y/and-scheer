@@ -15,7 +15,7 @@ const ResumeComponent = () => {
           <div className="relative">
             <div className="w-32 h-32 rounded-full border-4 border-blue-200 overflow-hidden">
               <Image  
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face" 
+                src="/man.png" 
                 alt="Saifur Rahman" 
                 className="w-full h-full object-cover"
                 height={200}

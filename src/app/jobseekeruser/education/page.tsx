@@ -15,7 +15,7 @@ type EducationFormData = {
   graduationEnd: string;
 };
 
-export default function PersonalInformation() {
+export default function Education() {
   const { register, handleSubmit } = useForm<EducationFormData>();
 
   const onSubmit = (data: EducationFormData) => {
