@@ -16,6 +16,7 @@ type EducationFormData = {
     major: string;
     graduationStart: string;
     graduationEnd: string;
+  
   }[];
 };
 
@@ -38,12 +39,12 @@ export default function EducationalBackground() {
     control,
     name: "education",
   });
-  const router=useRouter();
+  const router = useRouter();
 
 
   const onSubmit = (data: EducationFormData) => {
     console.log("Educational Data Submitted:", data);
-    router.push("/jobseekeruser/aigeneratedresume")
+    router.push("/jobseekeruser/contactInfo")
   };
 
   return (
@@ -52,7 +53,7 @@ export default function EducationalBackground() {
         <div className="w-full max-w-[1180px]">
           <form onSubmit={handleSubmit(onSubmit)}>
             {fields.map((field, index) => (
-              <div key={field.id} className="mb-8 border-b pb-8">
+              <div key={field.id} className="mb-8  pb-8">
                 {/* Degree */}
                 <div className="mb-4">
                   <FormInput
@@ -96,9 +97,10 @@ export default function EducationalBackground() {
                 {/* Achievements - static UI block */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                   <div>
-                    <label className="block text-xl font-medium text-gray-800 mb-2">
+                    <label className="block  font-medium text-scheer-primary-dark mb-2">
                       Achievements
                     </label>
+
                     <div className="w-full p-6 bg-gray-50 border border-[#c2c2c2] rounded-md flex flex-col items-center justify-center text-center">
                       <svg
                         className="w-10 h-10 text-gray-400 mb-2"
@@ -112,9 +114,25 @@ export default function EducationalBackground() {
                       <p className="text-xs text-gray-400 mb-4">
                         Format: jpeg, png & Max file size: 25 MB
                       </p>
-                      <button type="button" className="px-3 py-1 bg-gray-300 text-gray-800 rounded-md">
-                        Browse Files
-                      </button>
+                      <div>
+                        <label htmlFor="fileUpload" className="block mb-2 text-sm font-medium text-gray-700">
+                          Upload File
+                        </label>
+
+                        <div className="relative">
+                          <input
+                            id="fileUpload"
+                            type="file"
+                            // onChange={handleFileChange}
+                            className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                            //  {...register(`education.${index}.achivement`, { required: true })}
+                          />
+                          <div className="px-4 py-2 bg-gray-100 border border-gray-300 rounded-md text-center text-gray-600">
+                            {"Click to browse or drag a file here"}
+                          </div>
+                        </div>
+                      </div>
+
                     </div>
                   </div>
                 </div>

@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 import SearchField from "./SearchField";
 import { BsArrowRight } from "react-icons/bs";
+import Link from "next/link";
 
 export default function Banner() {
   return (
@@ -34,9 +35,9 @@ export default function Banner() {
 
           <div className="flex gap-3 mt-4">
             <button className="border px-3 text-xs md:text-base rounded py-2 hover:bg-green-300 hover:text-white transition-all duration-300">For Employers</button>
-            <button className="text-white text-xs md:text-base font-semibold px-3 rounded py-2 flex gap-1 bg-scheer-primary hover:bg-green-600 transition-all duration-300">
+            <Link href={"/jobseekeruser/airesumecreate"} className="text-white text-xs md:text-base font-semibold px-3 rounded py-2 flex gap-1 bg-scheer-primary hover:bg-green-600 transition-all duration-300">
               Create AI Resume <BsArrowRight className="my-auto" />
-            </button>
+            </Link >
           </div>
         </div>
 

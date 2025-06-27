@@ -43,7 +43,7 @@ export default function Education() {
               />
               }
             
-              <button onClick={()=>setCertificate(!certificate)} type="button" className=" bg-scheer-primary-dark rounded-lg h-full p-3 text-white roulg">{certificate? "Certifications":"Education"}</button>
+              <button onClick={()=>setCertificate(!certificate)} type="button" className=" bg-scheer-primary-dark rounded-lg h-full px-3 py-2 md:px-6 md:py-3 text-white roulg">{certificate? "Certifications":"Education"}</button>
 
             </div>
             
