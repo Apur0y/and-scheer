@@ -16,13 +16,19 @@ import ScrollTop from "@/page-components/Banner/ScrollTop";
 
 export default function Home() {
 
-
+  const navitem=[
+    { name: "Home", href: "#" },
+    { name: "For Job Seekers", href: "/jobseekeruser/jobSeekerHome" },
+    { name: "For Employers", href: "#" },
+    { name: "Course", href: "#" },
+    { name: "Pricing", href: "#" },
+  ];
 
 
 
   return (
     <div className="black-main relative">
-      <Navbar></Navbar>
+      <Navbar navItem={navitem}></Navbar>
       <Banner></Banner>
       <RecentJob></RecentJob>
 

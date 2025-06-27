@@ -23,7 +23,7 @@ export default function SearchField() {
 
   return (
     <div>
-      <h1 className='text-xl font-semibold'>Find Your Favorite Job</h1>
+      <h1 className='text-xl text-scheer-primary-dark font-medium'>Find Your Favorite Job</h1>
       <form onSubmit={handleSubmit(onSubmit)} className=''>
         <div className="  max-w-6xl mx-auto bg-white p-4 rounded-lg shadow flex flex-col lg:flex-row items-stretch gap-4 mt-2">
 
@@ -66,7 +66,7 @@ export default function SearchField() {
           </div>
 
           {/* Search Button */}
-          <button className="flex items-center gap-2 px-6 py-2 bg-neutral-800 text-white rounded hover:bg-neutral-900 transition whitespace-nowrap cursor-pointer">
+          <button className="flex items-center gap-2 px-6 py-2 bg-scheer-primary-dark text-white rounded hover:bg-neutral-900 transition whitespace-nowrap cursor-pointer">
             <FaSearch />
             Search
           </button>
