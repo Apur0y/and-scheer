@@ -31,7 +31,7 @@ export default function PersonalInformation() {
 
   const onSubmit = (data: PersonalInfoType) => {
     console.log(data, "Got the personal info");
-    router.push("/jobseekeruser/carearsummary")
+    router.push("/jobseekeruser/careersummary")
   };
 
   return (

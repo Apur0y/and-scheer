@@ -1,3 +1,4 @@
+import Logo from "@/components/MainLogo";
 import React from "react";
 import { FaFacebookF, FaTwitter, FaYoutube, FaVimeoV } from "react-icons/fa";
 
@@ -30,9 +31,10 @@ const Footer: React.FC = () => {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-t border-gray-700 pt-6 text-sm">
           {/* Logo and Copyright */}
           <div>
-            <div className="text-2xl font-bold text-green-500 mb-1">LOQO</div>
+         
             <p>© 2022 ABC. All rights reserved.</p>
           </div>
+             <Logo height={20} width={140}/>
 
           {/* Terms and Privacy */}
           <div className="flex space-x-6">
