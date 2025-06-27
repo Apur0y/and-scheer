@@ -12,7 +12,7 @@ type ButtonProps = {
 export default function Button({
     name = "Submit",
     type = "button",
-    className = "w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition",
+    className = "w-full bg-scheer-primary text-white py-3 px-6 rounded-lg hover:bg-green-700 transition",
     onClick,
     disabled = false,
     ...props
@@ -20,7 +20,7 @@ export default function Button({
   return (
     <button
       type={type}
-      className={`${className} bg-green-600 text-white`}
+      className={`${className} bg-scheer-primary text-white`}
       onClick={onClick}
       disabled={disabled}
       {...props}

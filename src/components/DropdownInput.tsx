@@ -16,7 +16,7 @@ type SelectInputProps = {
 
 const DropdownInput = ({
   label,
-  name,
+  
   options,
   defaultValue = "",
   onChange,
@@ -28,7 +28,7 @@ const DropdownInput = ({
       </label>
       <div className="relative">
         <select
-          name={name}
+         
           className="w-full p-3 pr-10 border border-[#c2c2c2] text-gray-500 rounded-md appearance-none"
           value={defaultValue}
           onChange={onChange}

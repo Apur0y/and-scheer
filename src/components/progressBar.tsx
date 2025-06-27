@@ -76,7 +76,8 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
       </div>
 
       {/* Labels container - using same grid layout */}
-      <div className="grid grid-cols-1 md:grid-cols-7 gap-2 md:gap-0">
+      {/* Labels for medium+ screens */}
+      <div className="hidden md:grid md:grid-cols-7 gap-2">
         {stepLabels.slice(0, totalSteps).map((step, index) => {
           const stepNum = index + 1;
           const isCurrent = stepNum === currentStep;
@@ -85,24 +86,22 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
           return (
             <div key={stepNum} className="flex flex-col items-center px-2">
               <span
-                className={`text-sm md:text-base text-center ${
-                  isCurrent
+                className={`text-sm md:text-base text-center ${isCurrent
                     ? "text-gray-900 font-medium"
                     : isCompleted
-                    ? "text-gray-700"
-                    : "text-gray-500"
-                }`}
+                      ? "text-scheer-primary"
+                      : "text-gray-500"
+                  }`}
               >
                 {step.title}
               </span>
               <span
-                className={`text-sm md:text-base text-center ${
-                  isCurrent
+                className={`text-sm md:text-base text-center ${isCurrent
                     ? "text-gray-900 font-medium"
                     : isCompleted
-                    ? "text-gray-700"
-                    : "text-gray-500"
-                }`}
+                      ? "text-scheer-primary"
+                      : "text-gray-500"
+                  }`}
               >
                 {step.subtitle}
               </span>
@@ -110,6 +109,13 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
           );
         })}
       </div>
+
+      {/* Current step only for small screens */}
+      <div className="block md:hidden text-center mt-4">
+        <div className="text-sm font-medium text-gray-900">{stepLabels[currentStep - 1].title}</div>
+        <div className="text-sm text-gray-500">{stepLabels[currentStep - 1].subtitle}</div>
+      </div>
+
     </div>
   );
 };

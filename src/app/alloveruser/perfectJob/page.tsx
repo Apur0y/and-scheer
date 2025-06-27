@@ -18,7 +18,7 @@ export default function PerfectJob() {
             <Container >
                 <div className='relative z-20'>
                     <InfoSection
-                        imageUrl="/perfect.jpg"
+                        imageUrl="/perfectJob.jpeg"
                         title="Ready to"
                         title2={<>Find Your <br /> Perfect Job?</>}
                         description="With AI-powered tools, we help you find the right job faster and easier. Get matched with top roles based on your skills and goals. Take control of your career path today."

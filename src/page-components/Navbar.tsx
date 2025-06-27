@@ -46,7 +46,7 @@ export default function Navbar() {
 
 
   return (
-    <nav className="bg-white border-b border-gray-100 shadow-sm  z-40">
+    <nav className="bg-white border-b border-gray-100 shadow-sm sticky top-0 z-40">
       <div className="max-w-[1420px] mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
         {/* Logo */}
         <Link href={'/'}>

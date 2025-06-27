@@ -72,7 +72,7 @@ export default function Loginform() {
             </div>
 
             {/* Login Button */}
-            <button className="w-full bg-green-600 text-white py-3 px-6 rounded-lg hover:bg-green-700 transition">
+            <button className="w-full bg-scheer-primary text-white py-3 px-6 rounded-lg hover:bg-green-700 transition">
               Login
             </button>
 
@@ -96,7 +96,7 @@ export default function Loginform() {
           </button>
           <div className='flex justify-center gap-2 text-gray-700  mt-3'>
             <p className='text-center'>If you don't have any account please</p>
-            <Link href={"/register"} className='text-green-600 underline font-semibold'>Create Account</Link>
+            <Link href={"/register"} className='text-scheer-primary underline font-semibold'>Create Account</Link>
           </div>
         </div>
       </div>
