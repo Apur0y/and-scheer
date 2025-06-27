@@ -2,22 +2,26 @@
 import Logo from "@/components/MainLogo";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
-import { CgProfile } from "react-icons/cg";
+
 import { FiMenu, FiX } from "react-icons/fi"; // For modern icons
 import { LuUser } from "react-icons/lu";
 
-export default function Navbar() {
+type NavItem = {
+  name: string;
+  href: string;
+};
+
+type NavbarProps = {
+  navItem: NavItem[];
+};
+
+export default function Navbar({ navItem }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [user, setUser] = useState(null)
 
-  const navItems = [
-    { name: "Home", href: "#" },
-    { name: "For Job Seekers", href: "#" },
-    { name: "For Employers", href: "#" },
-    { name: "Course", href: "#" },
-    { name: "Pricing", href: "#" },
-  ];
+  const navItems = navItem;  
+
 
   const toggleMenu = () => {
     setShowMenu((prev) => !prev);
@@ -31,7 +35,7 @@ export default function Navbar() {
         setShowMenu(false);
       }
     };
-
+   setUser(user)
     if (showMenu) {
       document.addEventListener('mousedown', handleClickOutside);
     } else {
@@ -41,7 +45,8 @@ export default function Navbar() {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [showMenu]);
+ 
+  }, [showMenu,user]);
 
 
 

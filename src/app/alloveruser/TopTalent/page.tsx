@@ -25,6 +25,8 @@ export default function TopTalent() {
                         buttonText="Post a Job "
                         onButtonClick={() => alert("Button clicked!")}
                         className='md:flex-row'
+                         height={689}
+                        width={562}
                     ></InfoSection>
                 </div>
             </Container>

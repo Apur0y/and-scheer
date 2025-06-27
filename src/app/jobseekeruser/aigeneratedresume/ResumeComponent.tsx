@@ -4,6 +4,7 @@ import { CgMail } from 'react-icons/cg';
 import { MapPinIcon, PhoneIcon } from '@heroicons/react/16/solid';
 import { FiExternalLink } from 'react-icons/fi';
 import { HiExternalLink } from 'react-icons/hi';
+import Image from 'next/image';
 
 const ResumeComponent = () => {
   return (
@@ -13,10 +14,12 @@ const ResumeComponent = () => {
         <div className="flex items-center space-x-6">
           <div className="relative">
             <div className="w-32 h-32 rounded-full border-4 border-blue-200 overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face" 
+              <Image  
+                src="/man.png" 
                 alt="Saifur Rahman" 
                 className="w-full h-full object-cover"
+                height={200}
+                width={200}
               />
             </div>
           </div>
@@ -151,7 +154,7 @@ const ResumeComponent = () => {
           <div className="mb-8">
             <h2 className="text-xl font-bold text-gray-800 mb-4 border-b-2 border-blue-500 pb-2">ABOUT ME</h2>
             <p className="text-gray-700 text-sm leading-relaxed">
-              Hello! I'm a Professional UI/UX Designer & Graphics Designer with a keen eye for detail and a drive for creativity. My expertise extends to proficiency in UI/UX designing, allowing me to create visually stunning graphics.
+              Hello! I am a Professional UI/UX Designer & Graphics Designer with a keen eye for detail and a drive for creativity. My expertise extends to proficiency in UI/UX designing, allowing me to create visually stunning graphics.
             </p>
           </div>
 

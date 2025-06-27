@@ -13,7 +13,7 @@ import 'swiper/css/navigation';
 // import './styles.css';
 
 // import required modules
-import { FreeMode, Navigation, Pagination } from 'swiper/modules';
+import { FreeMode, Navigation } from 'swiper/modules';
 import RecentJobCard from './RecentJobCard';
 
 export default function RecentJob() {

@@ -1,10 +1,12 @@
 'use client'
 import Input from '@/components/Input'
 import Logo from '@/components/MainLogo';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
+import { FcGoogle } from 'react-icons/fc';
 
 interface FormData {
     firstName?: string;
@@ -17,15 +19,15 @@ interface FormData {
 export default function Registerform() {
 
     const { register, handleSubmit } = useForm<FormData>();
-    const [isError, setIsError] = useState  ("");
+    const [isError, setIsError] = useState("");
 
-    const router =useRouter();
+    const router = useRouter();
 
     const onSubmit = (data: FormData) => {
         router.push("/")
         console.log(data, "Check the data here: ");
         try {
-            
+
         } catch (error) {
             setIsError(String(error))
         }
@@ -34,28 +36,30 @@ export default function Registerform() {
 
 
     return (
-
-
-        <section className="max-w-6xl mx-auto min-h-screen flex items-center justify-center md:px-4 ">
-            <div className="flex w-full  rounded-lg overflow-hidden ">
+        <section className="max-w-[1420px] mx-auto min-h-screen flex items-center justify-center md:px-4 ">
+            <div className="flex flex-col lg:flex-row rounded-lg overflow-hidden ">
 
                 {/* Left: Image Section */}
-                <div className="w-1/2 hidden md:block ">
-                    <img
-                        src="girl.jpg"
+                <div className="lg:w-1/2 hidden md:flex items-center justify-center">
+                    <Image
+                        src="/register.jpg"
                         alt="Login visual"
-                        className="h-full w-full rounded-lg object-cover"
+                        className=" rounded-lg -scale-x-100"
+                        height={1000}
+                        width={588}
+                        layout="intrinsic"
+
                     />
                 </div>
 
                 {/* Right: Form Section */}
-                <div className="w-full md:w-1/2 px-8 flex flex-col justify-center ">
+                <div className="w-full lg:w-1/2 px-8 flex flex-col justify-center ">
 
                     <div className='flex justify-center items-center flex-col'>
                         {/* Logo */}
                         <div className="mb-6">
                             {/* <img src="/logo.svg" alt="Logo" className="h-10" /> */}
-                             <Logo height={120} width={268}></Logo>
+                            <Logo height={120} width={268}></Logo>
                         </div>
 
                         {/* Welcome Message */}
@@ -114,15 +118,11 @@ export default function Registerform() {
 
                     {/* Continue with Google */}
                     <button className="w-full border border-gray-300 py-3 px-6 rounded-lg flex items-center justify-center gap-2 hover:bg-gray-100 transition">
-                        <img
-                            src="https://www.svgrepo.com/show/475656/google-color.svg"
-                            alt="Google"
-                            className="w-5 h-5"
-                        />
+                        <FcGoogle className='size-6' />
                         Login with Google
                     </button>
                     <div className='flex justify-center items-center gap-2 text-gray-700   mt-3'>
-                        <p className='text-center'>If you don't have any account please</p>
+                        <p className='text-center'>If you don&apos;t have any account please</p>
                         <Link href={"/login"} className='text-scheer-primary underline font-semibold'>Login</Link >
                     </div>
                 </div>

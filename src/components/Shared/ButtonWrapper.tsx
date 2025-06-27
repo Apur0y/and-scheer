@@ -20,7 +20,7 @@ const ButtonWrapper: React.FC<ButtonWrapperProps> = ({
   bgColor = "#28C76F",
   className = "",
   icon = "arrow-right",
-  type = "button",
+  // type = "button",
 }) => {
   const iconMap: {
     [key: string]: React.ComponentType<React.SVGProps<SVGSVGElement>>;

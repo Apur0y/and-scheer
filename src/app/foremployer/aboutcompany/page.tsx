@@ -162,7 +162,7 @@ function AboutCompany() {
     const {
         register,
         handleSubmit,
-        watch,
+       
         formState: { errors },
     } = useForm<Inputs>()
     const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data)
@@ -178,7 +178,7 @@ function AboutCompany() {
                             Tell Us About Your Company
                         </h2>
                         <p className="text-[#777777] text-lg leading-[160%]">
-                            This is your company's opportunity to shine provide some basice details to help potential candidates <br /> understand your business better
+                            This is your companys opportunity to shine provide some basice details to help potential candidates <br /> understand your business better
                         </p>
                     </div>
                     <div className='space-y-6'>

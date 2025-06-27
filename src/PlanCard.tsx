@@ -15,8 +15,8 @@ export default function PackageCard({
     planType,
     packageName,
     permissions,
-    buttonText,
-    onButtonClick,
+    // buttonText,
+    // onButtonClick,
 }: PackageCardProps) {
     return (
         <div className=" md:max-w-[457px] w-full border border-gray-100  bg-white  rounded-lg shadow-md px-8 py-5 flex flex-col">

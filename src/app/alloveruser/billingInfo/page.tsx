@@ -31,7 +31,7 @@ export interface PaymentInfoType{
 }
 
 
-export default function page() {
+export default function Billing() {
 
   const [userBillingInfo, setUserBillingInfo] = useState<UserBillingType>({
     firstName: '',
@@ -56,19 +56,19 @@ export default function page() {
     postalCode: ''
   })
 
-
+  console.log(paymentInfo)
   const handlePayment=(paymentInfo:PaymentInfoType)=>{
- 
+setPaymentInfo(paymentInfo)
      console.log(userBillingInfo,paymentInfo,"Hr is user info")
   }
 
   return (
-    <div>
+    <div className='md:mx-3'>
 
       <Container>
 
         <h1 className="text-3xl md:text-5xl font-semibold mb-12">Billing Information</h1>
-        <div className='flex flex-col md:flex-row '>
+        <div className='flex flex-col md:flex-row gap-4'>
           <UserBillingInfo userBillingInfo={userBillingInfo} setUserBillingInfo={setUserBillingInfo}/>
           <PaymentInfo handlePayment={handlePayment} />
 

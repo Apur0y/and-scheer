@@ -1,5 +1,6 @@
 
 import Container from '@/components/Container'
+import Image from 'next/image'
 import React from 'react'
 import { BsArrowRight } from 'react-icons/bs'
 
@@ -11,10 +12,12 @@ export default function AboutUs() {
                     <div className="flex flex-col md:flex-row items-center gap-10 px-6  max-w-6xl mx-auto">
                         {/* Left - Image */}
                         <div className="w-full md:w-1/2">
-                            <img
+                            <Image
                                 src="/about.png" // Replace with your image path
                                 alt="About Us"
                                 className="w-full rounded-lg  object-cover"
+                                height={793}
+                                width={674}
                             />
                         </div>
 
@@ -28,13 +31,13 @@ export default function AboutUs() {
                             {/* Description Paragraphs */}
                             <div className="space-y-4 para-main">
                                 <p>
-                                    We're revolutionizing how people find work by combining advanced AI with human-centric design.
+                                    Company Name was founded with a simple mission: to revolutionize the job search and recruitment process through the power of artificial intelligence. We combine cutting-edge AI technology with personalized career insights to help job seekers find the best opportunities and employers to hire the most qualified candidates faster and more efficiently.
                                 </p>
                                 <p>
-                                    Our mission is to empower job seekers with smart tools that make the search faster, smarter, and more aligned with individual goals.
+                                   For Job Seekers: We offer an intelligent job matching system that analyzes your profile and career preferences to suggest jobs that fit you perfectly. Whether you’re looking for a full-time role or exploring new career paths, probieren.de helps you apply instantly with AI-powered resumes and cover letters.
                                 </p>
                                 <p>
-                                    With personalized matching and real-time insights, we’re reshaping the hiring landscape for both candidates and companies.
+                                    For Employers: We streamline the hiring process by using AI to rank and match candidates to job listings, ensuring that you spend less time sorting through applications and more time focusing on the right people.
                                 </p>
                             </div>
 

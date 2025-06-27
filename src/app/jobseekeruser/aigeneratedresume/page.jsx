@@ -12,7 +12,7 @@ import Button from "@/components/Button";
 // Adjust path if different
 
 
-export default function PersonalInformation() {
+export default function AiGeneratedResume() {
 
 
   return (
