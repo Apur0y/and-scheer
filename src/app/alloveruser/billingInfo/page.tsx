@@ -31,7 +31,7 @@ export interface PaymentInfoType{
 }
 
 
-export default function page() {
+export default function Billing() {
 
   const [userBillingInfo, setUserBillingInfo] = useState<UserBillingType>({
     firstName: '',
@@ -56,9 +56,9 @@ export default function page() {
     postalCode: ''
   })
 
-
+  console.log(paymentInfo)
   const handlePayment=(paymentInfo:PaymentInfoType)=>{
- 
+setPaymentInfo(paymentInfo)
      console.log(userBillingInfo,paymentInfo,"Hr is user info")
   }
 

@@ -24,7 +24,7 @@ export default function PersonalInformation() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    
   } = useForm<PersonalInfoType>();
 
  const router = useRouter();

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react'
 
 interface Job {
@@ -16,7 +17,7 @@ export default function RecentJobCard({ job }: RecentJobCardProps) {
   return (
     <div className=' max-w-[457px] max-h- border border-gray-100 rounded-lg shadow-md p-4 bg-white '>
         <div className='flex gap-2 items-center'>
-            <img src={job.icons ||"company1.png"} alt="" className='w-12 h-12 rounded-3xl'/>
+            <Image src={job.icons ||"/company1.png"} alt="company" height={48} width={48} className=' rounded-3xl'/>
             <h1 className='text-md xl:text-xl font-semibold'>{job.name}</h1>
         </div>
         <h2 className='text-sm  mt-3 xl:text-lg  font-semibold'>{job.position}</h2>

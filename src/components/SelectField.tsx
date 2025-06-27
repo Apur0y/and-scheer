@@ -7,7 +7,7 @@ type SelectFieldProps = {
   label: string;
   name: string;
   options: Option[];
-  register: (name: string, options: { required: boolean }) => any;
+  register: (name: string, options: { required: boolean }) => Record<string, unknown>;
   required?: boolean;
   error?: string;
 };

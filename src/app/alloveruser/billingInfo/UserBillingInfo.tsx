@@ -1,8 +1,8 @@
 'use client'
-import DropdownInput from '@/components/DropdownInput';
+// import DropdownInput from '@/components/DropdownInput';
 import FormInput from '@/components/FormInput';
-import Input from '@/components/Input';
-import SelectField from '@/components/SelectField';
+// import Input from '@/components/Input';
+// import SelectField from '@/components/SelectField';
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { UserBillingType } from './page';
@@ -12,7 +12,7 @@ interface UserBillingInfoProps {
   setUserBillingInfo: React.Dispatch<React.SetStateAction<UserBillingType>>;
 }
 
-export default function UserBillingInfo({userBillingInfo, setUserBillingInfo}: UserBillingInfoProps) {
+export default function UserBillingInfo({ userBillingInfo, setUserBillingInfo }: UserBillingInfoProps) {
 
   const { register, handleSubmit } = useForm<UserBillingType>();
 
@@ -27,14 +27,14 @@ export default function UserBillingInfo({userBillingInfo, setUserBillingInfo}: U
     });
   };
 
-  const roleOptions = [
-    { label: "Owner", value: "owner" },
-    { label: "Developer", value: "developer" },
-    { label: "Designer", value: "designer" },
-    { label: "Manager", value: "manager" },
-    { label: "Marketer", value: "marketer" },
-    { label: "Other", value: "other" },
-  ];
+  // const roleOptions = [
+  //   { label: "Owner", value: "owner" },
+  //   { label: "Developer", value: "developer" },
+  //   { label: "Designer", value: "designer" },
+  //   { label: "Manager", value: "manager" },
+  //   { label: "Marketer", value: "marketer" },
+  //   { label: "Other", value: "other" },
+  // ];
 
 
   return (
@@ -44,75 +44,75 @@ export default function UserBillingInfo({userBillingInfo, setUserBillingInfo}: U
         {/* Input Fields */}
         <div className="space-y-4 mb-8">
           <div className='flex flex-col md:flex-row justify-between w-full gap-4'>
-            <FormInput 
-              label="First Name" 
-              type="text" 
+            <FormInput
+              label="First Name"
+              type="text"
               placeholder="John"
               {...register("firstName", { required: true })}
               onChange={(e) => handleInputChange('firstName', e.target.value)}
             />
-            <FormInput 
-              label="Last Name" 
-              type="text" 
+            <FormInput
+              label="Last Name"
+              type="text"
               placeholder="Doe"
               {...register("lastName", { required: true })}
               onChange={(e) => handleInputChange('lastName', e.target.value)}
             />
           </div>
           <div className='flex flex-col md:flex-row justify-between w-full gap-4'>
-            <FormInput 
-              label="Phone" 
-              type="text" 
+            <FormInput
+              label="Phone"
+              type="text"
               placeholder="+1 (555) 123-4567"
               {...register("phone", { required: true })}
               onChange={(e) => handleInputChange('phone', e.target.value)}
             />
-            <FormInput 
-              label="Email Address" 
-              type="email" 
+            <FormInput
+              label="Email Address"
+              type="email"
               placeholder="you@example.com"
               {...register("email", { required: true })}
               onChange={(e) => handleInputChange('email', e.target.value)}
             />
           </div>
-
+{/* 
           <SelectField
             label="Country/Region"
             name="country"
             options={roleOptions}
-            register={register}
-            required={true}
+            register={register("country", { required: true })} // ✅ FIXED
             onChange={(value) => handleInputChange('country', value)}
-          />
-          <FormInput 
-            label="Address" 
-            type="text" 
+          /> */}
+
+          <FormInput
+            label="Address"
+            type="text"
             placeholder="Provide your address"
             {...register("address", { required: true })}
             onChange={(e) => handleInputChange('address', e.target.value)}
           />
 
           <div className='flex flex-col md:flex-row justify-between w-full gap-4'>
-            <FormInput 
-              label="" 
-              type="text" 
+            <FormInput
+              label=""
+              type="text"
               placeholder="City"
               {...register("city", { required: true })}
               onChange={(e) => handleInputChange('city', e.target.value)}
             />
-            <FormInput 
-              label="" 
-              type="text" 
+            <FormInput
+              label=""
+              type="text"
               placeholder="State"
               {...register("state", { required: true })}
               onChange={(e) => handleInputChange('state', e.target.value)}
             />
-            <FormInput 
-              label="" 
-              type="text" 
+            <FormInput
+              label=""
+              type="text"
               placeholder="ZIP Code"
-              {...register("zipCode", { required: true })}
-              onChange={(e) => handleInputChange('zipCode', e.target.value)}
+              {...register("zipcode", { required: true })}
+              onChange={(e) => handleInputChange('zipcode', e.target.value)}
             />
           </div>
 

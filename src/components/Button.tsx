@@ -6,7 +6,7 @@ type ButtonProps = {
   className?: string;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   disabled?: boolean;
-  [key: string]: any;
+  [key: string]: unknown;
 };
 
 export default function Button({

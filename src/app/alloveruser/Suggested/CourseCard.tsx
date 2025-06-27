@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react'
 
 interface Course {
@@ -16,10 +17,12 @@ export default function CourseCard({ course }:{ course: Course }) {
             >
                 {/* Image */}
                 
-                <img
+                <Image
                     src={course.image}
                     alt={course.title}
                     className="w-full h-63% object-cover rounded-t-lg"
+                    height={255}
+                    width={425}
                 />
 
                 {/* Content */}

@@ -2,7 +2,7 @@
 import Logo from "@/components/MainLogo";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
-import { CgProfile } from "react-icons/cg";
+
 import { FiMenu, FiX } from "react-icons/fi"; // For modern icons
 import { LuUser } from "react-icons/lu";
 
@@ -31,7 +31,7 @@ export default function Navbar() {
         setShowMenu(false);
       }
     };
-
+   setUser(user)
     if (showMenu) {
       document.addEventListener('mousedown', handleClickOutside);
     } else {
@@ -41,7 +41,8 @@ export default function Navbar() {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [showMenu]);
+ 
+  }, [showMenu,user]);
 
 
 

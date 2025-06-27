@@ -14,7 +14,7 @@ export default function SearchField() {
     location: string;
   }
 
-  const { register, handleSubmit, formState: { errors } } = useForm<SearchFormInputs>();
+  const { register, handleSubmit,  } = useForm<SearchFormInputs>();
 
   const onSubmit = (data: SearchFormInputs) => {
     console.log(data, "Check the data here: ");
@@ -48,7 +48,7 @@ export default function SearchField() {
               {
                 
                 companies.map(company=>(
-                  <option value={company}>{company}</option>
+                  <option key={company} value={company}>{company}</option>
                 ))
               }
             </select>

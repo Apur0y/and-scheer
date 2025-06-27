@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {  BsArrowRight } from "react-icons/bs";
 
 interface InfoSectionProps {
@@ -8,6 +9,8 @@ interface InfoSectionProps {
   buttonText: string;
   onButtonClick?: () => void;
   className?: string;
+  height: number;
+  width :number
 }
 
 export default function InfoSection({
@@ -18,15 +21,19 @@ export default function InfoSection({
   description,
   buttonText,
   onButtonClick,
+  height,
+  width
 }: InfoSectionProps) {
   return (
     <div className={`flex flex-col  items-center gap-10 md:gap-14 md:px-6 py-12 max-w-6xl mx-auto ${className}`}>
       {/* Left - Image */}
       <div className="w-full md:w-1/2">
-        <img
+        <Image
           src={imageUrl}
           alt={title}
           className="w-full max-h-[689px] rounded-lg shadow-md object-cover"
+          height={height}
+          width={width}
         />
       </div>
 

@@ -3,8 +3,8 @@ import { BiRightArrowAlt } from 'react-icons/bi';
 
 export default function SuccessDetails() {
 
-    const name = "Saiful Rahman";
-    const plan = "Premium Plan"
+    // const name = "Saiful Rahman";
+    // const plan = "Premium Plan"
 
     return (
         <div>

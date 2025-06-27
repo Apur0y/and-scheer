@@ -25,6 +25,8 @@ export default function PerfectJob() {
                         buttonText="Create Your Profile"
                         onButtonClick={() => alert("Button clicked!")}
                         className='md:flex-row-reverse'
+                        height={689}
+                        width={562}
                     ></InfoSection>
                 </div>
             </Container>

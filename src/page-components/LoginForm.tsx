@@ -1,11 +1,13 @@
 "use client"
-import FormInput from '@/components/FormInput';
+// import FormInput from '@/components/FormInput';
 import Input from '@/components/Input'
 import Logo from '@/components/MainLogo';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React from 'react'
 import { useForm } from 'react-hook-form';
+import { FcGoogle } from 'react-icons/fc';
 
 interface FormData {
   email: string;
@@ -27,15 +29,20 @@ export default function Loginform() {
   return (
 
 
-    <section className="max-w-6xl mx-auto min-h-screen flex items-center justify-center md:px-4 ">
+    <section className="max-w-[1420px] mx-auto min-h-screen flex items-center justify-center md:px-4 ">
       <div className="flex w-full  rounded-lg overflow-hidden ">
 
         {/* Left: Image Section */}
-        <div className="w-1/2 hidden md:block ">
-          <img
-            src="girl.jpg"
+        <div className="w-1/2 hidden md:block my-9">
+          <Image
+            src="/logingirl.jpg"
             alt="Login visual"
-            className="h-full w-full rounded-lg object-cover"
+            className=" rounded-lg "
+            height={758}
+            width={588}
+          
+            layout="intrinsic"
+
           />
         </div>
 
@@ -87,15 +94,11 @@ export default function Loginform() {
 
           {/* Continue with Google */}
           <button className="w-full border border-gray-300 py-3 px-6 rounded-lg flex items-center justify-center gap-2 hover:bg-gray-100 transition">
-            <img
-              src="https://www.svgrepo.com/show/475656/google-color.svg"
-              alt="Google"
-              className="w-5 h-5"
-            />
+           <FcGoogle className='size-6' />
             Login with Google
           </button>
           <div className='flex justify-center gap-2 text-gray-700  mt-3'>
-            <p className='text-center'>If you don't have any account please</p>
+            <p className='text-center'>If you dont have any account please</p>
             <Link href={"/register"} className='text-scheer-primary underline font-semibold'>Create Account</Link>
           </div>
         </div>
