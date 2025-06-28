@@ -30,7 +30,7 @@ export default function Home() {
     <div className="black-main relative">
       <Navbar navItem={navitem}></Navbar>
       <Banner></Banner>
-      <RecentJob></RecentJob>
+      <RecentJob title={"Recent Job"}></RecentJob>
 
       <ChooseUs></ChooseUs>
       <AboutUs></AboutUs>
