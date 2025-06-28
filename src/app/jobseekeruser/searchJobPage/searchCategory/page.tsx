@@ -65,9 +65,9 @@ export default function RecentJob() {
 
 
     return (
-        <div className='bg-[#F8F8F8] '>
+        <div >
             
-            <div className='bg-[#F8F8F8] ml-0  2xl:ml-44'>
+            <div className=' ml-0  2xl:ml-44'>
                 <div className=' py-15  px-11 md:px-15'>
                     
 

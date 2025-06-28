@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPin, Star, Save, Eye } from 'lucide-react';
+
 
 // Filter Sidebar Component
 const FilterSidebar = () => {
@@ -46,7 +46,7 @@ const FilterSidebar = () => {
               min="0" 
               max="10" 
               value={experience}
-              onChange={(e) => setExperience(e.target.value)}
+              onChange={(e) => setExperience(Number(e.target.value))}
               className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
             />
             <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white text-xs px-2 py-1 rounded">
