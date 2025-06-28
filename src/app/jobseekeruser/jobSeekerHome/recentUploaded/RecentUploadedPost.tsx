@@ -1,4 +1,5 @@
 import RecentJobCard from '@/app/alloveruser/recentJobs/RecentJobCard'
+
 import React from 'react'
 
 export default function RecentUploadedPost() {
@@ -63,14 +64,16 @@ export default function RecentUploadedPost() {
     ]
     return (
 
-  
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-6  '>
-                {jobs.map((job, index) => (
+         
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-6  '>
+            {jobs.slice(0, 15).map((job, index) => (
 
-                    <RecentJobCard job={job} />
+                <RecentJobCard key={index} job={job} />
 
-                ))}
-       
+            ))}
+
+
+
         </div>
 
     )

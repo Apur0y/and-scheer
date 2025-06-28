@@ -25,7 +25,7 @@ export default function CategoryCard({ category }: CType) {
 ];
 const randomColor = bgColors[Math.floor(Math.random() * bgColors.length)];
 
-    console.log(category)
+
     return (
         <div className='p-[20px] flex gap-4 border border-gray-300 rounded-md shadow-md '>
             <div className={`${randomColor} p-[9px] rounded-full `}>
