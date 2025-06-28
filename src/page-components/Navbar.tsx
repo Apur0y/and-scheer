@@ -2,6 +2,8 @@
 import Logo from "@/components/MainLogo";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
+import { FaUser, FaDownload, FaBriefcase, FaSignOutAlt, FaSearch } from 'react-icons/fa';
+
 
 import { FiMenu, FiX } from "react-icons/fi"; // For modern icons
 import { LuUser } from "react-icons/lu";
@@ -18,9 +20,33 @@ type NavbarProps = {
 export default function Navbar({ navItem }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState({ ko: "h" })
+  const [searchView, setSearchView] = useState(false)
 
-  const navItems = navItem;  
+
+  const MenuItem = ({
+    icon,
+    label,
+    active = false,
+    danger = false,
+  }: {
+    icon: React.ReactNode;
+    label: string;
+    active?: boolean;
+    danger?: boolean;
+  }) => (
+    <div
+      className={`flex items-center gap-3 p-3 rounded-lg cursor-pointer transition
+      ${active ? '  font-medium' : ''}
+      ${danger ? 'text-red-500 hover:bg-red-100' : 'hover:bg-gray-100'}`}
+    >
+      <div className="text-xl">{icon}</div>
+      <span>{label}</span>
+    </div>
+  );
+
+
+  const navItems = navItem;
 
 
   const toggleMenu = () => {
@@ -35,7 +61,7 @@ export default function Navbar({ navItem }: NavbarProps) {
         setShowMenu(false);
       }
     };
-   setUser(user)
+    setUser(user)
     if (showMenu) {
       document.addEventListener('mousedown', handleClickOutside);
     } else {
@@ -45,8 +71,8 @@ export default function Navbar({ navItem }: NavbarProps) {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
- 
-  }, [showMenu,user]);
+
+  }, [showMenu, user]);
 
 
 
@@ -63,6 +89,11 @@ export default function Navbar({ navItem }: NavbarProps) {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-4 items-center text-sm font-medium text-gray-700">
+          <button className="flex items-center gap-2 px-6 py-3 bg-scheer-primary-dark text-white rounded hover:bg-neutral-900 transition whitespace-nowrap cursor-pointer">
+            <FaSearch />
+            Search
+          </button>
+           <span className="w-0.5 h-6 bg-gray-300 inline-block"></span>
           {navItems.map((item, index) => (
             <React.Fragment key={item.name}>
               <Link
@@ -93,11 +124,20 @@ export default function Navbar({ navItem }: NavbarProps) {
             </button>
 
             {showMenu && (
-              <div className="absolute top-12 right-0 bg-white shadow-lg rounded-md p-3 min-w-[120px] z-50">
+              <div className="absolute top-12 right-0 bg-white  rounded-md p-3 min-w-[120px] z-50">
                 {user ? (
-                  <button
-                    onClick={() => setShowMenu(false)}
-                    className="w-full text-left hover:text-main-green">Profile</button>
+                  // <button
+                  //   onClick={() => setShowMenu(false)}
+                  //   className="w-full text-left hover:text-main-green">Profile</button>
+                  <div onClick={() => setShowMenu(false)}>
+                    <div className="w-72 bg-white shadow-lg rounded-xl p-4 space-y-2">
+                      <MenuItem icon={<FaUser />} label="My Profile" />
+                      <MenuItem icon={<FaDownload />} label="Download My Resume" active />
+                      <MenuItem icon={<FaBriefcase />} label="Applied Job" />
+                      <MenuItem icon={<FaSignOutAlt />} label="Log Out" danger />
+                    </div>
+
+                  </div>
                 ) : (
                   <Link
                     onClick={() => setShowMenu(false)}
@@ -148,9 +188,19 @@ export default function Navbar({ navItem }: NavbarProps) {
               <div className="absolute -top-2 left-10 bg-white shadow-lg rounded-md p-3 min-w-[120px] z-50">
 
                 {user ? (
-                  <Link
-                    onClick={() => setShowMenu(false)}
-                    href={"/profile"} className="w-full text-left hover:text-main-green">Profile</Link>
+
+                  // <Link
+                  //   onClick={() => setShowMenu(false)}
+                  //   href={"/profile"} className="w-full text-left hover:text-main-green">Profile</Link>
+                  <div onClick={() => setShowMenu(false)}>
+                    <div className="w-72 bg-white shadow-lg rounded-xl p-4 space-y-2">
+                      <MenuItem icon={<FaUser />} label="My Profile" />
+                      <MenuItem icon={<FaDownload />} label="Download My Resume" active />
+                      <MenuItem icon={<FaBriefcase />} label="Applied Job" />
+                      <MenuItem icon={<FaSignOutAlt />} label="Log Out" danger />
+                    </div>
+
+                  </div>
                 ) : (
                   <Link
                     onClick={() => setShowMenu(false)}

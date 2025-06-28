@@ -45,7 +45,7 @@ export default function AllCategory() {
 
     
   return (
-    <div className='flex gap-8 justify-center flex-wrap bgpu'>
+    <div className='flex gap-8 justify-center flex-wrap '>
         {
             categories.map(category=><CategoryCard key={category.name} category={category} />)
         }
