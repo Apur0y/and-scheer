@@ -1,11 +1,14 @@
+import Container from "@/components/Container";
 import Logo from "@/components/MainLogo";
 import React from "react";
 import { FaFacebookF, FaTwitter, FaYoutube, FaVimeoV } from "react-icons/fa";
 
 const Footer: React.FC = () => {
   return (
-    <footer className=" py-10 px-6">
-      <div className="max-w-6xl mx-auto space-y-8">
+    <Container>
+
+    <footer className=" py-10 px-3">
+      <div className="   mx-auto space-y-8">
         
         {/* Top section: Nav + Icons */}
         <div className="flex flex-col md:flex-row items-start justify-between gap-6">
@@ -44,6 +47,8 @@ const Footer: React.FC = () => {
         </div>
       </div>
     </footer>
+    </Container>
+
   );
 };
 

@@ -15,7 +15,7 @@ interface RecentJobCardProps {
 
 export default function RecentJobCard({ job }: RecentJobCardProps) {
   return (
-    <div className=' max-w-[457px] max-h- border border-gray-100 rounded-lg shadow-md p-4 bg-white '>
+    <div className='w-full md:max-w-[457px]  border border-gray-100 rounded-lg shadow-md p-4 bg-white '>
         <div className='flex gap-2 items-center'>
             <Image src={job.icons ||"/company1.png"} alt="company" height={48} width={48} className=' rounded-3xl'/>
             <h1 className='text-md xl:text-xl font-semibold'>{job.name}</h1>

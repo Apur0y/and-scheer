@@ -1,0 +1,28 @@
+import Container from '@/components/Container'
+import React from 'react'
+import RecentUploadedPost from './RecentUploadedPost'
+import Link from 'next/link'
+import { IoMdArrowForward } from 'react-icons/io'
+
+export default function RecentUpload() {
+    return (
+        <div className='bg-scheer-bg-gray'>
+            <Container>
+
+                <h1 className='text-2xl md:text-5xl font-semibold text-center mb-12'>Recent Uploaded Jobs</h1>
+                <RecentUploadedPost />
+
+
+                <div className='flex justify-center items-center mt-9 md:mt-14'>
+                    <Link href={"/viewalljobs"}>
+                        <button className='border border-gray-400 text-scheer-primary-dark rounded font-medium py-[11px] px-6 flex'>View all Jobs <IoMdArrowForward className='ml-2 my-auto'/></button>
+                    </Link>
+                </div>
+
+
+
+            </Container>
+
+        </div>
+    )
+}

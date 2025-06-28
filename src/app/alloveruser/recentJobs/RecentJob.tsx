@@ -16,7 +16,11 @@ import 'swiper/css/navigation';
 import { FreeMode, Navigation } from 'swiper/modules';
 import RecentJobCard from './RecentJobCard';
 
-export default function RecentJob() {
+interface JobTitle{
+    title:string
+}
+
+export default function RecentJob({title}:JobTitle) {
 
     const jobs = [
         {
@@ -24,7 +28,7 @@ export default function RecentJob() {
             name: "BLUE Technology",
             position: "Full Stack Developer",
             location: "Dhaka, Bangladesh",
-            salary: "$1000 - $1500",
+            salary: " $4500",
 
         },
         {
@@ -32,7 +36,7 @@ export default function RecentJob() {
             name: "BLUE Technology",
             position: "Full Stack Developer",
             location: "Dhaka, Bangladesh",
-            salary: "$1000 - $1500",
+            salary: " $4500",
 
         },
         {
@@ -40,7 +44,7 @@ export default function RecentJob() {
             name: "BLUE Technology",
             position: "Full Stack Developer",
             location: "Dhaka, Bangladesh",
-            salary: "$1000 - $1500",
+            salary: "$4500",
 
         },
         {
@@ -48,7 +52,7 @@ export default function RecentJob() {
             name: "BLUE Technology",
             position: "Full Stack Developer",
             location: "Dhaka, Bangladesh",
-            salary: "$1000 - $1500",
+            salary: "$4500",
 
         },
         {
@@ -56,7 +60,7 @@ export default function RecentJob() {
             name: "BLUE Technology",
             position: "Full Stack Developer",
             location: "Dhaka, Bangladesh",
-            salary: "$1000 - $1500",
+            salary: "$4500",
 
         },
         {
@@ -64,7 +68,7 @@ export default function RecentJob() {
             name: "BLUE Technology",
             position: "Full Stack Developer",
             location: "Dhaka, Bangladesh",
-            salary: "$1000 - $1500",
+            salary: "$4500",
 
         },
         {
@@ -72,18 +76,20 @@ export default function RecentJob() {
             name: "BLUE Technology",
             position: "Full Stack Developer",
             location: "Dhaka, Bangladesh",
-            salary: "$1000 - $1500",
+            salary: "$4500",
 
         },
 
     ]
+
+    console.log(title)
 
     return (
         <div className='bg-[#F8F8F8] '>
             
             <div className='bg-[#F8F8F8] ml-0  2xl:ml-44'>
                 <div className=' py-15  px-11 md:px-15'>
-                    <h1 className='text-2xl md:text-4xl font-semibold mb-4'>Recent Job</h1>
+                    <h1 className='text-2xl md:text-5xl font-semibold mb-4'>{title || "Recent Job"}   </h1>
 
 
                     <div className="relative">
