@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -5,7 +6,8 @@ import { FreeMode, Navigation } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/free-mode'
 import 'swiper/css/navigation'
-import CategoryCard from '../../jobSeekerHome/TopCategory/CategoryCard'
+import CategoryCard from '../jobseekeruser/jobSeekerHome/TopCategory/CategoryCard'
+
 
 
 export default function AllCategory() {

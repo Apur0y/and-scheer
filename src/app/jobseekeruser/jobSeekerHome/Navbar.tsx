@@ -9,7 +9,7 @@ export default function JobSeekerNavbar() {
    
   ];
   return (
-    <div>
+    <div className='sticky top-0 z-50'>
         <Navbar navItem={navitem} />
     </div>
   )

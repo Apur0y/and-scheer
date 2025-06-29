@@ -9,6 +9,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import ResumeComponent from "./ResumeComponent";
 import Button from "@/components/Button";
+import Link from "next/link";
 // Adjust path if different
 
 
@@ -17,7 +18,7 @@ export default function AiGeneratedResume() {
 
   return (
     <Container>
-      <div className="min-h-screen p-4">
+      <div className="min-h-screen p-4 mb-12">
         <ProgressBar currentStep={7} totalSteps={7} />
         <div className="flex justify-center mt-12">
           <div className="p-6 w-full max-w-[1180px] h-[752px]">
@@ -27,9 +28,12 @@ export default function AiGeneratedResume() {
                 description="Take a moment to review your resume. You can make changes and regenerate if needed. When you’re ready, download it and start applying!"
               ></SectionHeader>
               <ResumeComponent></ResumeComponent>
-              <div className="flex gap-12 mt-16">
-                <Button className = "w-full bg-[#DBDBDB] text-black  py-3 px-6 rounded-lg hover:bg-green-700 transition" name="Download Resume" >Download Resume</Button>
-                <Button name="Find Your Favorite Job">Find Your Favorite Job</Button>
+              <div className="flex gap-12 py-16 ">
+                <button className = "w-full bg-[#DBDBDB] text-black  py-3 px-6 rounded-lg hover:bg-gray-200 transition  font-medium" name="Download Resume" >Download Resume</button>
+              
+              <Link href={"/jobseekeruser/jobSeekerHome"} className="w-full">
+              <Button name="Find Your Favorite Job">Find Your Favorite Job</Button>
+              </Link>  
             
               </div>
           </div>

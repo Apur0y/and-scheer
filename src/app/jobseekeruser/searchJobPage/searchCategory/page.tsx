@@ -14,15 +14,13 @@ import 'swiper/css/navigation';
 
 // import required modules
 import { FreeMode, Navigation } from 'swiper/modules';
-import RecentJobCard from '@/app/alloveruser/recentJobs/RecentJobCard';
+
 import CategoryCard from '../../jobSeekerHome/TopCategory/CategoryCard';
 
 
-interface JobTitle{
-    title:string
-}
 
-export default function RecentJob() {
+
+export default function CategoryList() {
 
       const categories=[
         {

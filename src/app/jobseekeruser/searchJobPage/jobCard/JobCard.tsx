@@ -13,7 +13,7 @@ type Job = {
 
 export default function JobCard({job}:{job:Job}) {
     return (
-        <div className="bg-white border border-gray-200 rounded-lg p-6 mb-4 hover:shadow-md transition-shadow">
+        <div className="bg-white border border-gray-200 rounded-lg p-6 mb-4 hover:shadow-md transition-shadow w-full">
             <div className="flex justify-between items-start mb-4">
                 <div className="flex items-center space-x-3">
                     <div className="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center">

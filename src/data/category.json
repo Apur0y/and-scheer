@@ -1,0 +1,33 @@
+
+        [
+            {
+                "icon": "/Frame.png",
+                "name": "Remote"
+            },
+            {
+                "icon": "/Frame 1.png",
+                "name": "MNC"
+            },
+            {
+                "icon": "/Frame 2.png",
+                "name": "Fresher"
+            },
+            {
+                "icon": "/Frame 3.png",
+                "name": "Startup"
+            },
+            {
+                "icon": "/Frame.png",
+                "name": "Anlytics "
+            },
+            {
+                "icon": "/Frame.png",
+                "name": "Internship"
+            },
+            {
+                "icon": "/Frame.png",
+                "name": "Banking"
+            }
+        ]
+
+    

@@ -4,7 +4,7 @@ import { MapPin, Star, Save, Eye } from 'lucide-react';
 
 // Filter Sidebar Component
 const FilterSidebar = () => {
-  const [workMode, setWorkMode] = useState('');
+//   const [workMode, setWorkMode] = useState('');
   const [experience, setExperience] = useState(5);
 
   return (

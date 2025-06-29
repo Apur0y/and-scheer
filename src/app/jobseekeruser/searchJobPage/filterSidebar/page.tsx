@@ -1,13 +1,14 @@
+'use client'
 import React, { useState } from 'react';
 
 
 // Filter Sidebar Component
-const FilterSidebar = () => {
-  const [workMode, setWorkMode] = useState('');
+export const FilterSidebar = () => {
+//   const [workMode, setWorkMode] = useState('');
   const [experience, setExperience] = useState(5);
 
   return (
-    <div className="w-80 bg-white p-6 border-r border-gray-200 h-screen overflow-y-auto">
+    <div className="w-[337px] bg-white p-6 border border-gray-200 h-screen ">
       <h2 className="text-lg font-semibold mb-6">All Filters</h2>
       
       {/* Work Mode Filter */}
