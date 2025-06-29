@@ -6,7 +6,7 @@ import { IoMdArrowForward } from 'react-icons/io'
 
 export default function RecentUpload() {
     return (
-        <div className='bg-scheer-bg-gray'>
+        <div className='bg-scheer-bg-gray mx-4'>
             <Container>
 
                 <h1 className='text-2xl md:text-5xl font-semibold text-center mb-12'>Recent Uploaded Jobs</h1>

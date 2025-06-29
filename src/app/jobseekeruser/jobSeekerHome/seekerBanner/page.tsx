@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function SeekerBanner() {
     return (
-        <div className='flex flex-col justify-center items-center my-20'>
+        <div className='flex flex-col justify-center items-center my-20 '>
             <div className='max-w-[1179px]'>
                 <h1 className="text-5xl md:text-7xl text-left font-semibold md:font-bold">
                    Find Your <span className="text-green-600">dream job</span> now

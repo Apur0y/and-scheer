@@ -21,7 +21,7 @@ export default function Navbar({ navItem }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [user, setUser] = useState({ ko: "h" })
-  const [searchView, setSearchView] = useState(false)
+  // const [searchView, setSearchView] = useState(false)
 
 
   const MenuItem = ({

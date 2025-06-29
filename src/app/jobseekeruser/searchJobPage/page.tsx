@@ -1,7 +1,10 @@
 import React from 'react'
 import JobSeekerNavbar from '../jobSeekerHome/Navbar'
 import AllCategory from './searchCategory/page'
-import JobSearchPage from './mainSearchSection/page'
+
+import { FilterSidebar } from './filterSidebar/page'
+import JobList from './jobList/page'
+import SerachRightSideBar from './rightSearchBar/page'
 
 export default function SearchJobPage() {
     return (
@@ -9,7 +12,13 @@ export default function SearchJobPage() {
             <JobSeekerNavbar></JobSeekerNavbar>
             <AllCategory />
             <div className='max-w-[1420px]  mx-auto'>
-                <JobSearchPage />
+                {/* <JobSearchPage /> */}
+
+            </div>
+            <div className=" max-w-[1420px] flex mx-auto ">
+                <FilterSidebar />
+                <JobList />
+                <SerachRightSideBar />
             </div>
 
 
