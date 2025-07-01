@@ -75,6 +75,17 @@ export default function Navbar({ navItem }: NavbarProps) {
   }, [showMenu, user]);
 
 
+  const handleSearch = () => {
+
+
+      const modal = document.getElementById('my_modal_2') as HTMLDialogElement | null;
+      if (modal) {
+        modal.showModal();
+      
+    }
+  }
+
+
 
   return (
     <nav className="bg-white border-b border-gray-100 shadow-sm sticky top-0 z-40">
@@ -87,13 +98,25 @@ export default function Navbar({ navItem }: NavbarProps) {
           </div>
         </Link>
 
+        {/* Open the modal using document.getElementById('ID').showModal() method */}
+        {/* <button className="btn" onClick={() => document.getElementById('my_modal_2').showModal()}>open modal</button> */}
+        <dialog id="my_modal_2" className="modal bg-white">
+          <div className="modal-box">
+            <h3 className="font-bold text-lg">Hello!</h3>
+            <p className="py-4">Press ESC key or click outside to close</p>
+          </div>
+          <form method="dialog" className="modal-backdrop">
+            <button>close</button>
+          </form>
+        </dialog>
+
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-4 items-center text-sm font-medium text-gray-700">
-          <button className="flex items-center gap-2 px-6 py-3 bg-scheer-primary-dark text-white rounded hover:bg-neutral-900 transition whitespace-nowrap cursor-pointer">
+          <button onClick={() => handleSearch()} className="flex items-center gap-2 px-6 py-3 bg-scheer-primary-dark text-white rounded hover:bg-neutral-900 transition whitespace-nowrap cursor-pointer">
             <FaSearch />
             Search
           </button>
-           <span className="w-0.5 h-6 bg-gray-300 inline-block"></span>
+          <span className="w-0.5 h-6 bg-gray-300 inline-block"></span>
           {navItems.map((item, index) => (
             <React.Fragment key={item.name}>
               <Link

@@ -25,7 +25,7 @@ export default function JobDetailspage() {
             <JobSeekerNavbar />
             <Container>
                 <AllFilterSection/>
-                <div className='flex mt-8 md:mt-0'>
+                <div className='flex mt-16 '>
 
                     <div className='space-y-6  w-[457px]'>
                         {
