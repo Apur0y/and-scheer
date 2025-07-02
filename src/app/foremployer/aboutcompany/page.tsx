@@ -1,133 +1,7 @@
-// import Container from '@/components/Container'
-// import DropdownInput from '@/components/DropdownInput';
-// import FormInput from '@/components/FormInput'
-// import ButtonWrapper from '@/components/Shared/ButtonWrapper';
+'use client'
+import React, { useState } from 'react';
 
-// const roleOptions = [
-//     { label: "Owner", value: "owner" },
-//     { label: "Developer", value: "developer" },
-//     { label: "Designer", value: "designer" },
-//     { label: "Manager", value: "manager" },
-//     { label: "Marketer", value: "marketer" },
-//     { label: "Other", value: "other" },
-// ];
-// const regionOptions = [
-//     { label: "Bangladesh", value: "bangladesh" },
-//     { label: "India", value: "india" },
-//     { label: "United States", value: "usa" },
-//     { label: "United Kingdom", value: "uk" },
-//     { label: "Canada", value: "canada" },
-//     { label: "Australia", value: "australia" },
-// ];
-
-
-// function AboutCompany() {
-//     return (
-//         <Container>
-//             <form>
-//                 <div className="space-y-6">
-//                     <div className="space-y-4">
-//                         <h2 className="text-2xl font-bold text-[#333333] leading-[140%]">
-//                             Tell Us About Your Company
-//                         </h2>
-//                         <p className="text-[#777777] text-lg leading-[160%]">
-//                             This is your company's opportunity to shine provide some basice details to help potential candidates <br /> understand your business better
-//                         </p>
-//                     </div>
-//                     <div className='space-y-6'>
-//                         {/* company name */}
-//                         <FormInput label="Company Name" placeholder="SM Technology" />
-//                         <div className="md:flex items-center justify-center gap-6">
-//                             {/* industry type */}
-//                             <div className="w-full md:w-1/2">
-//                                 <FormInput
-//                                     label="Industry type"
-//                                     placeholder="Tech, Marketing, Finance, etc."
-//                                 />
-//                             </div>
-//                             {/* what is your role */}
-//                             <div className="w-full md:w-1/2">
-//                                 <DropdownInput label="What is your role in the company?"
-//                                     name="role"
-//                                     options={roleOptions} />
-//                             </div>
-//                         </div>
-//                         {/* company description */}
-//                         <div>
-//                             <label htmlFor="companyDescription" className="block text-sm font-medium text-gray-700 mb-1">
-//                                 Company Description
-//                             </label>
-//                             <textarea
-//                                 id="companyDescription"
-//                                 name="companyDescription"
-//                                 rows={5}
-//                                 placeholder="SM Technology"
-//                                 className="w-full p-3 border border-[#c2c2c2] rounded-md text-gray-700"
-//                             />
-//                         </div>
-//                     </div>
-
-//                     <div className="flex flex-col md:flex-row items-center justify-center gap-6 gap-y-4">
-//                         {/* Company Country/Region */}
-//                         <div className="w-full md:w-[30%]">
-//                             <DropdownInput
-//                                 label="Company Country/Region"
-//                                 name="role"
-//                                 options={regionOptions}
-//                             />
-//                         </div>
-
-//                         {/* Company Address */}
-//                         <div className="w-full md:w-[70%]">
-//                             <FormInput
-//                                 label="Company Address"
-//                                 placeholder="Section-06, Mirpur, Dhaka"
-//                             />
-//                         </div>
-//                     </div>
-//                     <div className="flex flex-col md:flex-row gap-4">
-//                         {/* city */}
-//                         <div className="w-full md:w-1/3">
-//                             <FormInput label="City" placeholder="Dhaka" />
-//                         </div>
-
-//                         {/* state */}
-//                         <div className="w-full md:w-1/3">
-//                             <FormInput label="State" placeholder="Dhaka" />
-//                         </div>
-
-//                         {/* zip code */}
-//                         <div className="w-full md:w-1/3">
-//                             <FormInput label="ZIP Code" placeholder="1216" />
-//                         </div>
-//                     </div>
-//                     <ButtonWrapper
-//                         text="Next"
-//                         icon="arrow-right"
-//                         action="log"
-//                         bgColor="#28C76F"
-//                     />
-//                 </div>
-//             </form>
-//         </Container>
-
-//     )
-// }
-
-// export default AboutCompany
-
-
-
-
-"use client"
-import Container from '@/components/Container'
-import DropdownInput from '@/components/DropdownInput';
-import FormInput from '@/components/FormInput'
-import ButtonWrapper from '@/components/Shared/ButtonWrapper';
-import { useForm, SubmitHandler } from "react-hook-form"
-
-
-type Inputs = {
+type FormData = {
     companyName: string;
     industryType: string;
     role: string;
@@ -137,8 +11,11 @@ type Inputs = {
     cityName: string; 
     stateName: string; 
     zipCode: string; 
-    
-}
+};
+
+type FormErrors = {
+    [K in keyof FormData]?: string;
+};
 
 const roleOptions = [
     { label: "Owner", value: "owner" },
@@ -148,6 +25,7 @@ const roleOptions = [
     { label: "Marketer", value: "marketer" },
     { label: "Other", value: "other" },
 ];
+
 const regionOptions = [
     { label: "Bangladesh", value: "bangladesh" },
     { label: "India", value: "india" },
@@ -157,164 +35,296 @@ const regionOptions = [
     { label: "Australia", value: "australia" },
 ];
 
-
 function AboutCompany() {
-    const {
-        register,
-        handleSubmit,
-       
-        formState: { errors },
-    } = useForm<Inputs>()
-    const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data)
+    const [formData, setFormData] = useState<FormData>({
+        companyName: '',
+        industryType: '',
+        role: '',
+        country: '',
+        companyDescription: '',
+        companyAddress: '',
+        cityName: '',
+        stateName: '',
+        zipCode: '',
+    });
 
-    // console.log(watch("companyName")) // watch input value by passing the name of it
+    const [errors, setErrors] = useState<FormErrors>({});
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+        
+        // Clear error when user starts typing
+        if (errors[name as keyof FormData]) {
+            setErrors(prev => ({
+                ...prev,
+                [name]: ''
+            }));
+        }
+    };
+
+    const validateForm = (): boolean => {
+        const newErrors: FormErrors = {};
+
+        if (!formData.companyName.trim()) {
+            newErrors.companyName = 'Company name is required';
+        }
+        if (!formData.industryType.trim()) {
+            newErrors.industryType = 'Industry type is required';
+        }
+        if (!formData.role) {
+            newErrors.role = 'Role is required';
+        }
+        if (!formData.country) {
+            newErrors.country = 'Country is required';
+        }
+        if (!formData.companyDescription.trim()) {
+            newErrors.companyDescription = 'Company description is required';
+        }
+        if (!formData.companyAddress.trim()) {
+            newErrors.companyAddress = 'Company address is required';
+        }
+        if (!formData.cityName.trim()) {
+            newErrors.cityName = 'City is required';
+        }
+        if (!formData.stateName.trim()) {
+            newErrors.stateName = 'State is required';
+        }
+        if (!formData.zipCode.trim()) {
+            newErrors.zipCode = 'ZIP code is required';
+        }
+
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    };
+
+    const handleSubmit = () => {
+        if (validateForm()) {
+            console.log("Form Data:", formData);
+            alert("Form submitted successfully! Check console for data.");
+            
+            // You can also display the data in a more user-friendly way
+            const dataString = Object.entries(formData)
+                .map(([key, value]) => `${key}: ${value}`)
+                .join('\n');
+            console.log("Formatted Data:\n", dataString);
+        }
+    };
 
     return (
-        <Container>
-            <form onSubmit={handleSubmit(onSubmit)}>
+        <div className="max-w-4xl mx-auto p-6 bg-white">
+            <div className="space-y-6">
+                <div className="space-y-4">
+                    <h2 className="text-2xl font-bold text-gray-800 leading-tight">
+                        Tell Us About Your Company
+                    </h2>
+                    <p className="text-gray-600 text-lg leading-relaxed">
+                        This is your company's opportunity to shine - provide some basic details to help potential candidates understand your business better.
+                    </p>
+                </div>
+
                 <div className="space-y-6">
-                    <div className="space-y-4">
-                        <h2 className="text-2xl font-bold text-[#333333] leading-[140%]">
-                            Tell Us About Your Company
-                        </h2>
-                        <p className="text-[#777777] text-lg leading-[160%]">
-                            This is your companys opportunity to shine provide some basice details to help potential candidates <br /> understand your business better
-                        </p>
-                    </div>
-                    <div className='space-y-6'>
-                        {/* company name */}
-                        <FormInput label="Company Name" placeholder="SM Technology"
-                            {...register("companyName", { required: true })}
+                    {/* Company Name */}
+                    <div>
+                        <label htmlFor="companyName" className="block text-sm font-medium text-gray-700 mb-1">
+                            Company Name
+                        </label>
+                        <input
+                            id="companyName"
+                            name="companyName"
+                            type="text"
+                            placeholder="SM Technology"
+                            value={formData.companyName}
+                            onChange={handleInputChange}
+                            className="w-full p-3 border border-gray-300 rounded-md text-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                         />
-                        {errors.companyName && <span>This field is required</span>}
-                        <div className="md:flex items-center justify-center gap-6">
-                            {/* industry type */}
-                            <div className="w-full md:w-1/2">
-                                <FormInput
-                                    label="Industry type"
-                                    placeholder="Tech, Marketing, Finance, etc."
-                                    {...register("industryType", { required: true })}
-                                />
-                                {errors.industryType && <span>This field is required</span>}
-                            </div>
-                            {/* what is your role */}
-                            <div className="w-full md:w-1/2">
-                                <DropdownInput label="What is your role in the company?"
-                                    // name="role"
-                                    options={roleOptions}
-                                    {...register("role", { required: true })}
-                                />
-                                {errors.role && <span>This field is required</span>}
-                            </div>
-                        </div>
-                        {/* company description */}
-                        <div>
-                            <label htmlFor="companyDescription" className="block text-sm font-medium text-gray-700 mb-1">
-                                Company Description
+                        {errors.companyName && (
+                            <span className="text-red-500 text-sm mt-1 block">{errors.companyName}</span>
+                        )}
+                    </div>
+
+                    <div className="md:flex items-start gap-6 space-y-6 md:space-y-0">
+                        {/* Industry Type */}
+                        <div className="w-full md:w-1/2">
+                            <label htmlFor="industryType" className="block text-sm font-medium text-gray-700 mb-1">
+                                Industry Type
                             </label>
-                            <textarea
-                                // id="companyDescription"
-                                // name="companyDescription"
-                                rows={5}
-                                placeholder="SM Technology"
-                                className="w-full p-3 border border-[#c2c2c2] rounded-md text-gray-700"
-                                {...register("companyDescription", { required: true })}
+                            <input
+                                id="industryType"
+                                name="industryType"
+                                type="text"
+                                placeholder="Tech, Marketing, Finance, etc."
+                                value={formData.industryType}
+                                onChange={handleInputChange}
+                                className="w-full p-3 border border-gray-300 rounded-md text-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                             />
-                            {errors.companyDescription && <span>This field is required</span>}
+                            {errors.industryType && (
+                                <span className="text-red-500 text-sm mt-1 block">{errors.industryType}</span>
+                            )}
+                        </div>
+
+                        {/* Role */}
+                        <div className="w-full md:w-1/2">
+                            <label htmlFor="role" className="block text-sm font-medium text-gray-700 mb-1">
+                                What is your role in the company?
+                            </label>
+                            <select
+                                id="role"
+                                name="role"
+                                value={formData.role}
+                                onChange={handleInputChange}
+                                className="w-full p-3 border border-gray-300 rounded-md text-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                            >
+                                <option value="">Select your role</option>
+                                {roleOptions.map((option) => (
+                                    <option key={option.value} value={option.value}>
+                                        {option.label}
+                                    </option>
+                                ))}
+                            </select>
+                            {errors.role && (
+                                <span className="text-red-500 text-sm mt-1 block">{errors.role}</span>
+                            )}
                         </div>
                     </div>
 
-                    <div className="flex flex-col md:flex-row items-center justify-center gap-6 gap-y-4">
-                        {/* Company Country/Region */}
+                    {/* Company Description */}
+                    <div>
+                        <label htmlFor="companyDescription" className="block text-sm font-medium text-gray-700 mb-1">
+                            Company Description
+                        </label>
+                        <textarea
+                            id="companyDescription"
+                            name="companyDescription"
+                            rows={5}
+                            placeholder="Tell us about your company..."
+                            value={formData.companyDescription}
+                            onChange={handleInputChange}
+                            className="w-full p-3 border border-gray-300 rounded-md text-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        />
+                        {errors.companyDescription && (
+                            <span className="text-red-500 text-sm mt-1 block">{errors.companyDescription}</span>
+                        )}
+                    </div>
+
+                    <div className="flex flex-col md:flex-row items-start gap-6 space-y-6 md:space-y-0">
+                        {/* Country/Region */}
                         <div className="w-full md:w-[30%]">
-                            <DropdownInput
-                                label="Company Country/Region"
-                                // name="role"
-                                options={regionOptions}
-                                {...register("country", { required: true })}
-                            />
-                            {errors.country && <span>This field is required</span>}
+                            <label htmlFor="country" className="block text-sm font-medium text-gray-700 mb-1">
+                                Company Country/Region
+                            </label>
+                            <select
+                                id="country"
+                                name="country"
+                                value={formData.country}
+                                onChange={handleInputChange}
+                                className="w-full p-3 border border-gray-300 rounded-md text-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                            >
+                                <option value="">Select country</option>
+                                {regionOptions.map((option) => (
+                                    <option key={option.value} value={option.value}>
+                                        {option.label}
+                                    </option>
+                                ))}
+                            </select>
+                            {errors.country && (
+                                <span className="text-red-500 text-sm mt-1 block">{errors.country}</span>
+                            )}
                         </div>
 
                         {/* Company Address */}
                         <div className="w-full md:w-[70%]">
-                            <FormInput
-                                label="Company Address"
+                            <label htmlFor="companyAddress" className="block text-sm font-medium text-gray-700 mb-1">
+                                Company Address
+                            </label>
+                            <input
+                                id="companyAddress"
+                                name="companyAddress"
+                                type="text"
                                 placeholder="Section-06, Mirpur, Dhaka"
-                                {...register("companyAddress", { required: true })}
+                                value={formData.companyAddress}
+                                onChange={handleInputChange}
+                                className="w-full p-3 border border-gray-300 rounded-md text-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                             />
-                            {errors.companyAddress && <span>This field is required</span>}
+                            {errors.companyAddress && (
+                                <span className="text-red-500 text-sm mt-1 block">{errors.companyAddress}</span>
+                            )}
                         </div>
                     </div>
-                    <div className="flex flex-col md:flex-row gap-4">
-                        {/* city */}
+
+                    <div className="flex flex-col md:flex-row gap-4 space-y-6 md:space-y-0">
+                        {/* City */}
                         <div className="w-full md:w-1/3">
-                            <FormInput label="City" placeholder="Dhaka" 
-                                {...register("cityName", { required: true })}
+                            <label htmlFor="cityName" className="block text-sm font-medium text-gray-700 mb-1">
+                                City
+                            </label>
+                            <input
+                                id="cityName"
+                                name="cityName"
+                                type="text"
+                                placeholder="Dhaka"
+                                value={formData.cityName}
+                                onChange={handleInputChange}
+                                className="w-full p-3 border border-gray-300 rounded-md text-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                             />
-                            {errors.cityName && <span>This field is required</span>}
+                            {errors.cityName && (
+                                <span className="text-red-500 text-sm mt-1 block">{errors.cityName}</span>
+                            )}
                         </div>
 
-                        {/* state */}
+                        {/* State */}
                         <div className="w-full md:w-1/3">
-                            <FormInput label="State" placeholder="Dhaka" 
-                                {...register("stateName", { required: true })}
+                            <label htmlFor="stateName" className="block text-sm font-medium text-gray-700 mb-1">
+                                State
+                            </label>
+                            <input
+                                id="stateName"
+                                name="stateName"
+                                type="text"
+                                placeholder="Dhaka"
+                                value={formData.stateName}
+                                onChange={handleInputChange}
+                                className="w-full p-3 border border-gray-300 rounded-md text-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                             />
-                            {errors.stateName && <span>This field is required</span>}
+                            {errors.stateName && (
+                                <span className="text-red-500 text-sm mt-1 block">{errors.stateName}</span>
+                            )}
                         </div>
 
-                        {/* zip code */}
+                        {/* ZIP Code */}
                         <div className="w-full md:w-1/3">
-                            <FormInput label="ZIP Code" placeholder="1216" 
-                                {...register("zipCode", { required: true })}
+                            <label htmlFor="zipCode" className="block text-sm font-medium text-gray-700 mb-1">
+                                ZIP Code
+                            </label>
+                            <input
+                                id="zipCode"
+                                name="zipCode"
+                                type="text"
+                                placeholder="1216"
+                                value={formData.zipCode}
+                                onChange={handleInputChange}
+                                className="w-full p-3 border border-gray-300 rounded-md text-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                             />
-                            {errors.zipCode && <span>This field is required</span>}
+                            {errors.zipCode && (
+                                <span className="text-red-500 text-sm mt-1 block">{errors.zipCode}</span>
+                            )}
                         </div>
                     </div>
-                    <ButtonWrapper
-                        text="Next"
-                        icon="arrow-right"
-                        action="log"
-                        bgColor="#28C76F"
-                    />
+
+                    <button 
+                        type="button"
+                        onClick={handleSubmit}
+                        className="w-full  bg-green-500 hover:bg-green-600 text-white font-medium py-3 px-8 rounded-md transition-colors duration-200 focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+                    >
+                        Next
+                    </button>
                 </div>
-            </form>
-        </Container>
-
-    )
+            </div>
+        </div>
+    );
 }
 
-export default AboutCompany
-
-
-// import { useForm, SubmitHandler } from "react-hook-form"
-
-
-// type Inputs = {
-//   example: string
-//   exampleRequired: string
-// }
-
-
-// export default function App() {
-//   const {
-//     register,
-//     handleSubmit,
-//     watch,
-//     formState: { errors },
-//   } = useForm<Inputs>()
-//   const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data)
-
-
-//   console.log(watch("example")) // watch input value by passing the name of it
-
-
-//   return (
-//     /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
-//     <form onSubmit={handleSubmit(onSubmit)}>
-//       <input {...register("exampleRequired", { required: true })} />
-//       {/* errors will return when field validation fails  */}
-//       {errors.exampleRequired && <span>This field is required</span>}
-//     </form>
-//   )
-// }
+export default AboutCompany;
