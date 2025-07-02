@@ -7,6 +7,7 @@ import { FaUser, FaDownload, FaBriefcase, FaSignOutAlt, FaSearch } from 'react-i
 
 import { FiMenu, FiX } from "react-icons/fi"; // For modern icons
 import { LuUser } from "react-icons/lu";
+import SearchSection from "./SearchSection";
 
 type NavItem = {
   name: string;
@@ -21,6 +22,7 @@ export default function Navbar({ navItem }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [user, setUser] = useState({ ko: "h" })
+
   // const [searchView, setSearchView] = useState(false)
 
 
@@ -54,6 +56,7 @@ export default function Navbar({ navItem }: NavbarProps) {
   };
 
   const menuRef = useRef<HTMLDivElement>(null);
+  const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -77,12 +80,10 @@ export default function Navbar({ navItem }: NavbarProps) {
 
   const handleSearch = () => {
 
+    console.log("first")
 
-      const modal = document.getElementById('my_modal_2') as HTMLDialogElement | null;
-      if (modal) {
-        modal.showModal();
-      
-    }
+    setAnimate(!animate);
+
   }
 
 
@@ -98,17 +99,7 @@ export default function Navbar({ navItem }: NavbarProps) {
           </div>
         </Link>
 
-        {/* Open the modal using document.getElementById('ID').showModal() method */}
-        {/* <button className="btn" onClick={() => document.getElementById('my_modal_2').showModal()}>open modal</button> */}
-        <dialog id="my_modal_2" className="modal bg-white">
-          <div className="modal-box">
-            <h3 className="font-bold text-lg">Hello!</h3>
-            <p className="py-4">Press ESC key or click outside to close</p>
-          </div>
-          <form method="dialog" className="modal-backdrop">
-            <button>close</button>
-          </form>
-        </dialog>
+
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-4 items-center text-sm font-medium text-gray-700">
@@ -234,6 +225,26 @@ export default function Navbar({ navItem }: NavbarProps) {
           </div>
         </div>
       </div>
+
+      {animate && (
+        <div
+          className="fixed inset-0 bg-black/30 bg-opacity-40 z-5 transition-opacity duration-300"
+          onClick={handleSearch} // Optional: click backdrop to close
+        ></div>
+      )}
+
+      <div
+        className={`
+        absolute bg-white border-t-2 border-gray-400 w-full py-12 
+        transform transition-all duration-500 ease-out z-10
+        ${animate ? 'translate-y-0 opacity-100' : '-translate-y-80 opacity-0'}
+      `}
+      >
+      
+        <SearchSection />
+      </div>
+
+
     </nav>
   );
 }
