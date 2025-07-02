@@ -7,6 +7,7 @@ import { FaUser, FaDownload, FaBriefcase, FaSignOutAlt, FaSearch } from 'react-i
 
 import { FiMenu, FiX } from "react-icons/fi"; // For modern icons
 import { LuUser } from "react-icons/lu";
+import SearchSection from "./SearchSection";
 
 type NavItem = {
   name: string;
@@ -21,6 +22,7 @@ export default function Navbar({ navItem }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [user, setUser] = useState({ ko: "h" })
+
   // const [searchView, setSearchView] = useState(false)
 
 
@@ -54,6 +56,7 @@ export default function Navbar({ navItem }: NavbarProps) {
   };
 
   const menuRef = useRef<HTMLDivElement>(null);
+  const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -75,6 +78,15 @@ export default function Navbar({ navItem }: NavbarProps) {
   }, [showMenu, user]);
 
 
+  const handleSearch = () => {
+
+    console.log("first")
+
+    setAnimate(!animate);
+
+  }
+
+
 
   return (
     <nav className="bg-white border-b border-gray-100 shadow-sm sticky top-0 z-40">
@@ -87,13 +99,15 @@ export default function Navbar({ navItem }: NavbarProps) {
           </div>
         </Link>
 
+
+
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-4 items-center text-sm font-medium text-gray-700">
-          <button className="flex items-center gap-2 px-6 py-3 bg-scheer-primary-dark text-white rounded hover:bg-neutral-900 transition whitespace-nowrap cursor-pointer">
+          <button onClick={() => handleSearch()} className="flex items-center gap-2 px-6 py-3 bg-scheer-primary-dark text-white rounded hover:bg-neutral-900 transition whitespace-nowrap cursor-pointer">
             <FaSearch />
             Search
           </button>
-           <span className="w-0.5 h-6 bg-gray-300 inline-block"></span>
+          <span className="w-0.5 h-6 bg-gray-300 inline-block"></span>
           {navItems.map((item, index) => (
             <React.Fragment key={item.name}>
               <Link
@@ -211,6 +225,26 @@ export default function Navbar({ navItem }: NavbarProps) {
           </div>
         </div>
       </div>
+
+      {animate && (
+        <div
+          className="fixed inset-0 bg-black/30 bg-opacity-40 z-5 transition-opacity duration-300"
+          onClick={handleSearch} // Optional: click backdrop to close
+        ></div>
+      )}
+
+      <div
+        className={`
+        absolute bg-white border-t-2 border-gray-400 w-full py-12 
+        transform transition-all duration-500 ease-out z-10
+        ${animate ? 'translate-y-0 opacity-100' : '-translate-y-80 opacity-0'}
+      `}
+      >
+      
+        <SearchSection />
+      </div>
+
+
     </nav>
   );
 }

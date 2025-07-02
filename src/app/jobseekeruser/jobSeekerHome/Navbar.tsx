@@ -3,8 +3,8 @@ import React from 'react'
 
 export default function JobSeekerNavbar() {
     const navitem=[
-    { name: "Job", href: "" },
-    { name: "Company", href: "#" },
+    { name: "Job", href: "/jobseekeruser/searchJobPage" },
+    { name: "Company", href: "/jobseekeruser/jobDetailsPage" },
     { name: "Course", href: "#" },
    
   ];
