@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import Container from "@/components/Container";
 import FormInput from "@/components/FormInput";
 import ProgressBar from "@/components/progressBar";
@@ -60,7 +60,7 @@ export default function ContactInformation() {
               {/* Social Media Selection and Link */}
               <div className="flex flex-col md:flex-row justify-between gap-4 mb-8">
                 <div className="w-full md:w-1/3">
-                  <label className="block font-medium text-scheer-primary-dark mb-1">
+                  <label className="block font-medium text-primary-dark mb-1">
                     Other Social Media
                   </label>
                   <select

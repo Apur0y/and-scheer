@@ -22,17 +22,25 @@ const ButtonWrapper: React.FC<ButtonWrapperProps> = ({
   icon = "arrow-right",
   // type = "button",
 }) => {
+
+
+
   const iconMap: {
     [key: string]: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   } = {
     "arrow-right": ArrowRightIcon,
   };
+
+
   const actionMap: { [key: string]: () => void } = {
     log: () => console.log("Button clicked!"),
     submit: () => {},
   };
   const IconComponent = iconMap[icon] || null;
   const handleClick = action ? actionMap[action] : undefined;
+
+
+
 
   return (
     <SharedButton

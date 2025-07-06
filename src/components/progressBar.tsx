@@ -86,22 +86,24 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
           return (
             <div key={stepNum} className="flex flex-col items-center px-2">
               <span
-                className={`text-sm md:text-base text-center ${isCurrent
+                className={`text-sm md:text-base text-center ${
+                  isCurrent
                     ? "text-gray-900 font-medium"
                     : isCompleted
-                      ? "text-scheer-primary"
-                      : "text-gray-500"
-                  }`}
+                    ? "text-primary"
+                    : "text-gray-500"
+                }`}
               >
                 {step.title}
               </span>
               <span
-                className={`text-sm md:text-base text-center ${isCurrent
+                className={`text-sm md:text-base text-center ${
+                  isCurrent
                     ? "text-gray-900 font-medium"
                     : isCompleted
-                      ? "text-scheer-primary"
-                      : "text-gray-500"
-                  }`}
+                    ? "text-primary"
+                    : "text-gray-500"
+                }`}
               >
                 {step.subtitle}
               </span>
@@ -112,10 +114,13 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
 
       {/* Current step only for small screens */}
       <div className="block md:hidden text-center mt-4">
-        <div className="text-sm font-medium text-gray-900">{stepLabels[currentStep - 1].title}</div>
-        <div className="text-sm text-gray-500">{stepLabels[currentStep - 1].subtitle}</div>
+        <div className="text-sm font-medium text-gray-900">
+          {stepLabels[currentStep - 1].title}
+        </div>
+        <div className="text-sm text-gray-500">
+          {stepLabels[currentStep - 1].subtitle}
+        </div>
       </div>
-
     </div>
   );
 };

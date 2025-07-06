@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Container from "@/components/Container";
 import FormInput from "@/components/FormInput";
 import ProgressBar from "@/components/progressBar";
@@ -21,17 +21,13 @@ interface PersonalInfoType {
 }
 
 export default function PersonalInformation() {
-  const {
-    register,
-    handleSubmit,
-    
-  } = useForm<PersonalInfoType>();
+  const { register, handleSubmit } = useForm<PersonalInfoType>();
 
- const router = useRouter();
+  const router = useRouter();
 
   const onSubmit = (data: PersonalInfoType) => {
     console.log(data, "Got the personal info");
-    router.push("/jobseekeruser/careersummary")
+    router.push("/jobseekeruser/careersummary");
   };
 
   return (
@@ -82,7 +78,7 @@ export default function PersonalInformation() {
               {/* Country and Address */}
               <div className="flex flex-col md:flex-row justify-between gap-4 mb-8">
                 <div className="w-full md:w-1/3">
-                  <label className="block font-medium  text-scheer-primary-dark">
+                  <label className="block font-medium  text-primary-dark">
                     Country/Region
                   </label>
                   <select

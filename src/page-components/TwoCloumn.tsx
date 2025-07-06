@@ -1,5 +1,5 @@
 import Image from "next/image";
-import {  BsArrowRight } from "react-icons/bs";
+import { BsArrowRight } from "react-icons/bs";
 
 interface InfoSectionProps {
   imageUrl: string;
@@ -10,7 +10,7 @@ interface InfoSectionProps {
   onButtonClick?: () => void;
   className?: string;
   height: number;
-  width :number
+  width: number;
 }
 
 export default function InfoSection({
@@ -22,10 +22,12 @@ export default function InfoSection({
   buttonText,
   onButtonClick,
   height,
-  width
+  width,
 }: InfoSectionProps) {
   return (
-    <div className={`flex flex-col  items-center gap-10 md:gap-14 md:px-6 py-12 max-w-6xl mx-auto ${className}`}>
+    <div
+      className={`flex flex-col  items-center gap-10 md:gap-14 md:px-6 py-12 max-w-6xl mx-auto ${className}`}
+    >
       {/* Left - Image */}
       <div className="w-full md:w-1/2">
         <Image
@@ -40,16 +42,19 @@ export default function InfoSection({
       {/* Right - Content */}
       <div className="w-full md:w-1/2 space-y-8 md:space-y-12">
         <div className="space-y-4 ">
-          <h2 className="text-2xl md:text-4xl font-semibold ">{title} <span className="text-scheer-primary">{title2}</span></h2>
+          <h2 className="text-2xl md:text-4xl font-semibold ">
+            {title} <span className="text-primary">{title2}</span>
+          </h2>
 
           <p className="para-main">{description}</p>
         </div>
 
         <button
           onClick={onButtonClick}
-          className="px-6 py-3 bg-black-button text-white font-semibold rounded bg-scheer-primary transition flex"
+          className="px-6 py-3 bg-black-button text-white font-semibold rounded bg-primary transition flex"
         >
-          {buttonText}<BsArrowRight className='my-auto ml-2'> </BsArrowRight>
+          {buttonText}
+          <BsArrowRight className="my-auto ml-2"> </BsArrowRight>
         </button>
       </div>
     </div>

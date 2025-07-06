@@ -1,4 +1,4 @@
-'use client';
+"use client";
 // import Container from "@/components/Container";
 import FormInput from "@/components/FormInput";
 // import ProgressBar from "@/components/progressBar";
@@ -16,7 +16,6 @@ type EducationFormData = {
     major: string;
     graduationStart: string;
     graduationEnd: string;
-  
   }[];
 };
 
@@ -41,10 +40,9 @@ export default function EducationalBackground() {
   });
   const router = useRouter();
 
-
   const onSubmit = (data: EducationFormData) => {
     console.log("Educational Data Submitted:", data);
-    router.push("/jobseekeruser/contactInfo")
+    router.push("/jobseekeruser/contactInfo");
   };
 
   return (
@@ -60,7 +58,9 @@ export default function EducationalBackground() {
                     label="Your Degree"
                     type="text"
                     placeholder="e.g., Bachelor’s, Master’s"
-                    {...register(`education.${index}.degree`, { required: true })}
+                    {...register(`education.${index}.degree`, {
+                      required: true,
+                    })}
                   />
                 </div>
 
@@ -70,13 +70,17 @@ export default function EducationalBackground() {
                     label="Institution Name"
                     type="text"
                     placeholder="Dhaka University"
-                    {...register(`education.${index}.institution`, { required: true })}
+                    {...register(`education.${index}.institution`, {
+                      required: true,
+                    })}
                   />
                   <FormInput
                     label="Major"
                     type="text"
                     placeholder="Electronic and Communication Engineering"
-                    {...register(`education.${index}.major`, { required: true })}
+                    {...register(`education.${index}.major`, {
+                      required: true,
+                    })}
                   />
                 </div>
 
@@ -85,19 +89,23 @@ export default function EducationalBackground() {
                   <FormInput
                     label="Graduation Start"
                     type="date"
-                    {...register(`education.${index}.graduationStart`, { required: true })}
+                    {...register(`education.${index}.graduationStart`, {
+                      required: true,
+                    })}
                   />
                   <FormInput
                     label="Graduation End"
                     type="date"
-                    {...register(`education.${index}.graduationEnd`, { required: true })}
+                    {...register(`education.${index}.graduationEnd`, {
+                      required: true,
+                    })}
                   />
                 </div>
 
                 {/* Achievements - static UI block */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                   <div>
-                    <label className="block  font-medium text-scheer-primary-dark mb-2">
+                    <label className="block  font-medium text-primary-dark mb-2">
                       Achievements
                     </label>
 
@@ -108,14 +116,22 @@ export default function EducationalBackground() {
                         stroke="currentColor"
                         viewBox="0 0 24 24"
                       >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4" />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M12 4v16m8-8H4"
+                        />
                       </svg>
                       <p className="text-gray-500 mb-2">Drop file or browse</p>
                       <p className="text-xs text-gray-400 mb-4">
                         Format: jpeg, png & Max file size: 25 MB
                       </p>
                       <div>
-                        <label htmlFor="fileUpload" className="block mb-2 text-sm font-medium text-gray-700">
+                        <label
+                          htmlFor="fileUpload"
+                          className="block mb-2 text-sm font-medium text-gray-700"
+                        >
                           Upload File
                         </label>
 
@@ -132,7 +148,6 @@ export default function EducationalBackground() {
                           </div>
                         </div>
                       </div>
-
                     </div>
                   </div>
                 </div>

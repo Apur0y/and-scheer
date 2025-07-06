@@ -85,7 +85,7 @@ export default function RecentJob({title}:JobTitle) {
     console.log(title)
 
     return (
-        <div className='bg-[#F8F8F8] '>
+        <div className='bg-[#a2f026] '>
             
             <div className='bg-[#F8F8F8] ml-0  2xl:ml-44'>
                 <div className=' py-15  px-11 md:px-15'>

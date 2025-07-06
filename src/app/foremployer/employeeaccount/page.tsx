@@ -22,7 +22,6 @@
 
 // export default EmployeeAccount
 
-
 import Container from "@/components/Container";
 import Image from "next/image";
 import Link from "next/link";
@@ -39,24 +38,23 @@ export default function ResumeCreate() {
             width={578}
             height={499}
             className="rounded-2xl "
-        
           />
         </div>
 
-        <div className="text-left flex flex-col  justify-between mt-6 md:mt-0 text-scheer-primary-dark">
+        <div className="text-left flex flex-col  justify-between mt-6 md:mt-0 text-primary-dark">
           <h1 className="text-4xl md:text-5xl xl:text-7xl font-bold  mb-4 leading-[1.24]">
             <span className="">Create Your</span> <br />
-Employee Account
+            Employee Account
           </h1>
           <p className="text-gray-400 text-sm mb-4 md:mb-12 leading-[1.6]">
-            Follow these simple steps to set up your company profile and find the perfect  <br /> candidate for your team.
+            Follow these simple steps to set up your company profile and find
+            the perfect <br /> candidate for your team.
           </p>
-               <Link href={"/jobseekeruser/personalInformation"} >
-            <button  className="px-18 py-4 bg-[#28C76F] text-[#FCFCFC] font-semibold rounded-lg hover:bg-green-700">
-            Start Now
-          </button>
+          <Link href={"/jobseekeruser/personalInformation"}>
+            <button className="px-18 py-4 bg-[#28C76F] text-[#FCFCFC] font-semibold rounded-lg hover:bg-green-700">
+              Start Now
+            </button>
           </Link>
-          
         </div>
       </div>
     </Container>

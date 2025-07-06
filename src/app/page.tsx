@@ -45,7 +45,6 @@ export default function Home() {
       <Footer></Footer>
 
       <ScrollTop></ScrollTop>
-
     </div>
 
   );

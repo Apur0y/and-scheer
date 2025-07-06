@@ -1,15 +1,11 @@
 "use client"
 import Container from "@/components/Container";
 
-import ProgressBar from "@/components/progressBar";
-import ButtonWrapper from "@/components/Shared/ButtonWrapper";
-import SectionHeader from "@/components/Shared/SectionHeader";
-import { useRouter } from "next/navigation";
-import React from "react";
-import { useForm } from "react-hook-form";
-import ResumeComponent from "./ResumeComponent";
 import Button from "@/components/Button";
+import ProgressBar from "@/components/progressBar";
+import SectionHeader from "@/components/Shared/SectionHeader";
 import Link from "next/link";
+import ResumeComponent from "./ResumeComponent";
 // Adjust path if different
 
 
